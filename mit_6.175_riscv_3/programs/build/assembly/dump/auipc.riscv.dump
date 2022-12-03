@@ -1,0 +1,92 @@
+
+/home/adam/Documents/lab8/programs/assembly/../build/assembly/bin/auipc.riscv:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000200 <_start>:
+ 200:	00002517          	auipc	a0,0x2
+ 204:	71c50513          	addi	a0,a0,1820 # 291c <begin_signature+0x191c>
+ 208:	004005ef          	jal	a1,20c <_start+0xc>
+ 20c:	40b50533          	sub	a0,a0,a1
+ 210:	00002eb7          	lui	t4,0x2
+ 214:	710e8e93          	addi	t4,t4,1808 # 2710 <begin_signature+0x1710>
+ 218:	00200e13          	li	t3,2
+ 21c:	03d51663          	bne	a0,t4,248 <fail>
+
+00000220 <test_3>:
+ 220:	ffffe517          	auipc	a0,0xffffe
+ 224:	8fc50513          	addi	a0,a0,-1796 # ffffdb1c <begin_signature+0xffffcb1c>
+ 228:	004005ef          	jal	a1,22c <test_3+0xc>
+ 22c:	40b50533          	sub	a0,a0,a1
+ 230:	ffffeeb7          	lui	t4,0xffffe
+ 234:	8f0e8e93          	addi	t4,t4,-1808 # ffffd8f0 <begin_signature+0xffffc8f0>
+ 238:	00300e13          	li	t3,3
+ 23c:	01d51663          	bne	a0,t4,248 <fail>
+ 240:	01c01663          	bne	zero,t3,24c <pass>
+ 244:	00100e13          	li	t3,1
+
+00000248 <fail>:
+ 248:	00c0006f          	j	254 <exit>
+
+0000024c <pass>:
+ 24c:	00000e13          	li	t3,0
+ 250:	0040006f          	j	254 <exit>
+
+00000254 <exit>:
+ 254:	c0002573          	rdcycle	a0
+ 258:	c02025f3          	rdinstret	a1
+ 25c:	01051613          	slli	a2,a0,0x10
+ 260:	01065613          	srli	a2,a2,0x10
+ 264:	000206b7          	lui	a3,0x20
+ 268:	00d666b3          	or	a3,a2,a3
+ 26c:	78069073          	csrw	mtohost,a3
+ 270:	01055613          	srli	a2,a0,0x10
+ 274:	000306b7          	lui	a3,0x30
+ 278:	00d666b3          	or	a3,a2,a3
+ 27c:	78069073          	csrw	mtohost,a3
+ 280:	00010637          	lui	a2,0x10
+ 284:	00a60613          	addi	a2,a2,10 # 1000a <begin_signature+0xf00a>
+ 288:	78061073          	csrw	mtohost,a2
+ 28c:	01059613          	slli	a2,a1,0x10
+ 290:	01065613          	srli	a2,a2,0x10
+ 294:	000201b7          	lui	gp,0x20
+ 298:	003661b3          	or	gp,a2,gp
+ 29c:	78019073          	csrw	mtohost,gp
+ 2a0:	0105d613          	srli	a2,a1,0x10
+ 2a4:	000301b7          	lui	gp,0x30
+ 2a8:	003661b3          	or	gp,a2,gp
+ 2ac:	78019073          	csrw	mtohost,gp
+ 2b0:	00010637          	lui	a2,0x10
+ 2b4:	00a60613          	addi	a2,a2,10 # 1000a <begin_signature+0xf00a>
+ 2b8:	78061073          	csrw	mtohost,a2
+ 2bc:	780e1073          	csrw	mtohost,t3
+ 2c0:	0000006f          	j	2c0 <exit+0x6c>
+ 2c4:	0000                	.2byte	0x0
+ 2c6:	0000                	.2byte	0x0
+ 2c8:	0000                	.2byte	0x0
+ 2ca:	0000                	.2byte	0x0
+ 2cc:	0000                	.2byte	0x0
+ 2ce:	0000                	.2byte	0x0
+ 2d0:	0000                	.2byte	0x0
+ 2d2:	0000                	.2byte	0x0
+ 2d4:	0000                	.2byte	0x0
+ 2d6:	0000                	.2byte	0x0
+ 2d8:	0000                	.2byte	0x0
+ 2da:	0000                	.2byte	0x0
+ 2dc:	0000                	.2byte	0x0
+ 2de:	0000                	.2byte	0x0
+ 2e0:	0000                	.2byte	0x0
+ 2e2:	0000                	.2byte	0x0
+ 2e4:	0000                	.2byte	0x0
+ 2e6:	0000                	.2byte	0x0
+ 2e8:	0000                	.2byte	0x0
+ 2ea:	0000                	.2byte	0x0
+ 2ec:	0000                	.2byte	0x0
+ 2ee:	0000                	.2byte	0x0
+ 2f0:	0000                	.2byte	0x0
+ 2f2:	0000                	.2byte	0x0
+ 2f4:	0000                	.2byte	0x0
+ 2f6:	0000                	.2byte	0x0
+ 2f8:	0000                	.2byte	0x0
+ 2fa:	0000                	.2byte	0x0

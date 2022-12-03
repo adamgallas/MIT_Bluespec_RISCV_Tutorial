@@ -1,0 +1,11 @@
+=== Generated schedule for module_decode ===
+
+Method schedule
+---------------
+Method: decode
+Ready signal: True
+Conflict-free: decode
+ 
+Logical execution order: decode
+
+=============================================

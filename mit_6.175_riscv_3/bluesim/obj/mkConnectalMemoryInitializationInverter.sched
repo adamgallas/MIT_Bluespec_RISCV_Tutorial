@@ -1,0 +1,30 @@
+=== Generated schedule for mkConnectalMemoryInitializationInverter ===
+
+Method schedule
+---------------
+Method: ifc_done
+Ready signal: fifo_done.i_notFull
+Conflict-free: ifc_request, inverseIfc_done, inverseIfc_request
+Conflicts: ifc_done
+ 
+Method: ifc_request
+Ready signal: fifo_request.i_notFull
+Conflict-free: ifc_done, inverseIfc_done, inverseIfc_request
+Conflicts: ifc_request
+ 
+Method: inverseIfc_done
+Ready signal: fifo_done.i_notEmpty
+Conflict-free: ifc_done, ifc_request, inverseIfc_request
+Conflicts: inverseIfc_done
+ 
+Method: inverseIfc_request
+Ready signal: fifo_request.i_notEmpty
+Conflict-free: ifc_done, ifc_request, inverseIfc_done
+Conflicts: inverseIfc_request
+ 
+Logical execution order: ifc_done,
+			 ifc_request,
+			 inverseIfc_done,
+			 inverseIfc_request
+
+=======================================================================

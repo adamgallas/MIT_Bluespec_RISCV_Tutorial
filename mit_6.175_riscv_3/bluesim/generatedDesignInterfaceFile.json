@@ -1,0 +1,914 @@
+{
+    "bsvdefines": [
+        "ONECYCLEEXEP",
+        "ConnectalVersion=22.05.23b",
+        "NumberOfMasters=1",
+        "PinType=Empty",
+        "PinTypeInclude=Misc",
+        "NumberOfUserTiles=1",
+        "SlaveDataBusWidth=32",
+        "SlaveControlAddrWidth=5",
+        "BurstLenSize=10",
+        "project_dir=/home/adam/mit_6.175_riscv_3/bluesim",
+        "MainClockPeriod=20",
+        "DerivedClockPeriod=10.000000",
+        "CnocTop",
+        "XsimHostInterface",
+        "PhysAddrWidth=40",
+        "SIMULATION",
+        "CONNECTAL_BITS_DEPENDENCES=bsim",
+        "BOARD_bluesim"
+    ],
+    "globaldecls": [
+        {
+            "dtype": "TypeDef",
+            "tdtype": {
+                "elements": [
+                    [
+                        "ChannelType_Read",
+                        null
+                    ],
+                    [
+                        "ChannelType_Write",
+                        null
+                    ]
+                ],
+                "name": "ChannelType",
+                "type": "Enum"
+            },
+            "tname": "ChannelType"
+        },
+        {
+            "dtype": "TypeDef",
+            "tdtype": {
+                "elements": [
+                    {
+                        "pname": "x",
+                        "ptype": {
+                            "name": "Bit",
+                            "params": [
+                                {
+                                    "name": "32"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "pname": "y",
+                        "ptype": {
+                            "name": "Bit",
+                            "params": [
+                                {
+                                    "name": "32"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "pname": "z",
+                        "ptype": {
+                            "name": "Bit",
+                            "params": [
+                                {
+                                    "name": "32"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "pname": "w",
+                        "ptype": {
+                            "name": "Bit",
+                            "params": [
+                                {
+                                    "name": "32"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "name": "DmaDbgRec",
+                "type": "Struct"
+            },
+            "tname": "DmaDbgRec"
+        },
+        {
+            "dtype": "TypeDef",
+            "tdtype": {
+                "elements": [
+                    [
+                        "DmaErrorNone",
+                        null
+                    ],
+                    [
+                        "DmaErrorSGLIdOutOfRange_r",
+                        null
+                    ],
+                    [
+                        "DmaErrorSGLIdOutOfRange_w",
+                        null
+                    ],
+                    [
+                        "DmaErrorMMUOutOfRange_r",
+                        null
+                    ],
+                    [
+                        "DmaErrorMMUOutOfRange_w",
+                        null
+                    ],
+                    [
+                        "DmaErrorOffsetOutOfRange",
+                        null
+                    ],
+                    [
+                        "DmaErrorSGLIdInvalid",
+                        null
+                    ],
+                    [
+                        "DmaErrorTileTagOutOfRange",
+                        null
+                    ]
+                ],
+                "name": "DmaErrorType",
+                "type": "Enum"
+            },
+            "tname": "DmaErrorType"
+        },
+        {
+            "dtype": "TypeDef",
+            "tdtype": {
+                "name": "Bit",
+                "params": [
+                    {
+                        "name": "32"
+                    }
+                ]
+            },
+            "tname": "SpecialTypeForSendingFd"
+        },
+        {
+            "dtype": "TypeDef",
+            "tdtype": {
+                "elements": [
+                    [
+                        "Idle",
+                        null
+                    ],
+                    [
+                        "Stopped",
+                        null
+                    ],
+                    [
+                        "Running",
+                        null
+                    ]
+                ],
+                "name": "TileState",
+                "type": "Enum"
+            },
+            "tname": "TileState"
+        },
+        {
+            "dtype": "TypeDef",
+            "tdtype": {
+                "elements": [
+                    {
+                        "pname": "tile",
+                        "ptype": {
+                            "name": "Bit",
+                            "params": [
+                                {
+                                    "name": "2"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "pname": "state",
+                        "ptype": {
+                            "name": "TileState"
+                        }
+                    }
+                ],
+                "name": "TileControl",
+                "type": "Struct"
+            },
+            "tname": "TileControl"
+        },
+        {
+            "dtype": "TypeDef",
+            "tdtype": {
+                "elements": [
+                    [
+                        "XsimIfcNames_XsimMsgRequest",
+                        null
+                    ],
+                    [
+                        "XsimIfcNames_XsimMsgIndication",
+                        null
+                    ]
+                ],
+                "name": "XsimIfcNames",
+                "type": "Enum"
+            },
+            "tname": "XsimIfcNames"
+        },
+        {
+            "dtype": "TypeDef",
+            "tdtype": {
+                "elements": [
+                    [
+                        "IfcNamesNone",
+                        "0"
+                    ],
+                    [
+                        "PlatformIfcNames_MemServerRequestS2H",
+                        "1"
+                    ],
+                    [
+                        "PlatformIfcNames_MMURequestS2H",
+                        "2"
+                    ],
+                    [
+                        "PlatformIfcNames_MemServerIndicationH2S",
+                        "3"
+                    ],
+                    [
+                        "PlatformIfcNames_MMUIndicationH2S",
+                        "4"
+                    ],
+                    [
+                        "IfcNames_ConnectalProcIndicationH2S",
+                        "5"
+                    ],
+                    [
+                        "IfcNames_ConnectalProcRequestS2H",
+                        "6"
+                    ],
+                    [
+                        "IfcNames_ConnectalMemoryInitializationS2H",
+                        "7"
+                    ]
+                ],
+                "name": "IfcNames",
+                "type": "Enum"
+            },
+            "tname": "IfcNames"
+        }
+    ],
+    "globalimports": [
+        "GetPut",
+        "Vector"
+    ],
+    "interfaces": [
+        {
+            "Package": "ConnectalMemory",
+            "cdecls": [
+                {
+                    "dname": "addrTrans",
+                    "dparams": [
+                        {
+                            "pname": "sglId",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "offset",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "dname": "setTileState",
+                    "dparams": [
+                        {
+                            "pname": "tc",
+                            "ptype": {
+                                "name": "TileControl"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "dname": "stateDbg",
+                    "dparams": [
+                        {
+                            "pname": "rc",
+                            "ptype": {
+                                "name": "ChannelType"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "dname": "memoryTraffic",
+                    "dparams": [
+                        {
+                            "pname": "rc",
+                            "ptype": {
+                                "name": "ChannelType"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "cname": "MemServerRequest"
+        },
+        {
+            "Package": "ConnectalMemory",
+            "cdecls": [
+                {
+                    "dname": "sglist",
+                    "dparams": [
+                        {
+                            "pname": "sglId",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "sglIndex",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "addr",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "64"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "len",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "dname": "region",
+                    "dparams": [
+                        {
+                            "pname": "sglId",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "barr12",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "64"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "index12",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "barr8",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "64"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "index8",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "barr4",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "64"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "index4",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "barr0",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "64"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "index0",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "dname": "idRequest",
+                    "dparams": [
+                        {
+                            "pname": "fd",
+                            "ptype": {
+                                "name": "SpecialTypeForSendingFd"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "dname": "idReturn",
+                    "dparams": [
+                        {
+                            "pname": "sglId",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "dname": "setInterface",
+                    "dparams": [
+                        {
+                            "pname": "interfaceId",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "sglId",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "cname": "MMURequest"
+        },
+        {
+            "Package": "ConnectalMemory",
+            "cdecls": [
+                {
+                    "dname": "addrResponse",
+                    "dparams": [
+                        {
+                            "pname": "physAddr",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "64"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "dname": "reportStateDbg",
+                    "dparams": [
+                        {
+                            "pname": "rec",
+                            "ptype": {
+                                "name": "DmaDbgRec"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "dname": "reportMemoryTraffic",
+                    "dparams": [
+                        {
+                            "pname": "words",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "64"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "dname": "error",
+                    "dparams": [
+                        {
+                            "pname": "code",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "sglId",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "offset",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "64"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "extra",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "64"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "cname": "MemServerIndication"
+        },
+        {
+            "Package": "ConnectalMemory",
+            "cdecls": [
+                {
+                    "dname": "idResponse",
+                    "dparams": [
+                        {
+                            "pname": "sglId",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "dname": "configResp",
+                    "dparams": [
+                        {
+                            "pname": "sglId",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "dname": "error",
+                    "dparams": [
+                        {
+                            "pname": "code",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "sglId",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "offset",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "64"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "extra",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "64"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "cname": "MMUIndication"
+        },
+        {
+            "Package": "XsimIF",
+            "cdecls": [
+                {
+                    "dname": "msgSink",
+                    "dparams": [
+                        {
+                            "pname": "portal",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "data",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "dname": "msgSinkFd",
+                    "dparams": [
+                        {
+                            "pname": "portal",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "data",
+                            "ptype": {
+                                "name": "SpecialTypeForSendingFd"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "cname": "XsimMsgRequest"
+        },
+        {
+            "Package": "XsimIF",
+            "cdecls": [
+                {
+                    "dname": "msgSource",
+                    "dparams": [
+                        {
+                            "pname": "portal",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "data",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "cname": "XsimMsgIndication"
+        },
+        {
+            "Package": "Ifc",
+            "cdecls": [
+                {
+                    "dname": "hostToCpu",
+                    "dparams": [
+                        {
+                            "pname": "startpc",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "cname": "ConnectalProcRequest"
+        },
+        {
+            "Package": "Ifc",
+            "cdecls": [
+                {
+                    "dname": "done",
+                    "dparams": []
+                },
+                {
+                    "dname": "request",
+                    "dparams": [
+                        {
+                            "pname": "addr",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "pname": "data",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "cname": "ConnectalMemoryInitialization"
+        },
+        {
+            "Package": "Ifc",
+            "cdecls": [
+                {
+                    "dname": "sendMessage",
+                    "dparams": [
+                        {
+                            "pname": "mess",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "18"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "dname": "wroteWord",
+                    "dparams": [
+                        {
+                            "pname": "data",
+                            "ptype": {
+                                "name": "Bit",
+                                "params": [
+                                    {
+                                        "name": "32"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "cname": "ConnectalProcIndication"
+        }
+    ]
+}

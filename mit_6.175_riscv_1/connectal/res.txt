@@ -1,0 +1,23 @@
+sixstageras
+		cycles	insts
+tower		6085	4169
+median		5500	2711
+multiply	43206	26750
+qsort		21909	11012
+vvad		1556	1033
+
+sixstagebonus
+		cycles	insts
+tower		4496	4169
+median		3301	2711
+multiply	32808	26750
+qsort		13770	11012
+vvad		1162	1033
+
+withcache
+		cycles	insts
+tower		21606	4171
+median		13806	2711
+multiply	56492	26750
+qsort		26336	11012
+vvad		6059	1033

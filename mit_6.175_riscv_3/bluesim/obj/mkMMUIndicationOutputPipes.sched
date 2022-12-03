@@ -1,0 +1,396 @@
+=== Generated schedule for mkMMUIndicationOutputPipes ===
+
+Method schedule
+---------------
+Method: methods_idResponse_enq
+Ready signal: ! idResponse_responseAdapter_notEmptyReg
+Conflict-free: methods_configResp_enq,
+	       methods_configResp_notFull,
+	       methods_error_enq,
+	       methods_error_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty
+Sequenced after: methods_idResponse_notFull,
+		 portalIfc_indications_0_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: methods_idResponse_enq
+ 
+Method: methods_idResponse_notFull
+Ready signal: True
+Conflict-free: methods_idResponse_notFull,
+	       methods_configResp_enq,
+	       methods_configResp_notFull,
+	       methods_error_enq,
+	       methods_error_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: methods_idResponse_enq, portalIfc_indications_0_deq
+ 
+Method: methods_configResp_enq
+Ready signal: ! configResp_responseAdapter_notEmptyReg
+Conflict-free: methods_idResponse_enq,
+	       methods_idResponse_notFull,
+	       methods_error_enq,
+	       methods_error_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty
+Sequenced after: methods_configResp_notFull,
+		 portalIfc_indications_1_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: methods_configResp_enq
+ 
+Method: methods_configResp_notFull
+Ready signal: True
+Conflict-free: methods_idResponse_enq,
+	       methods_idResponse_notFull,
+	       methods_configResp_notFull,
+	       methods_error_enq,
+	       methods_error_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: methods_configResp_enq, portalIfc_indications_1_deq
+ 
+Method: methods_error_enq
+Ready signal: ! error_responseAdapter_notEmptyReg
+Conflict-free: methods_idResponse_enq,
+	       methods_idResponse_notFull,
+	       methods_configResp_enq,
+	       methods_configResp_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq
+Sequenced after: methods_error_notFull,
+		 portalIfc_indications_2_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: methods_error_enq
+ 
+Method: methods_error_notFull
+Ready signal: True
+Conflict-free: methods_idResponse_enq,
+	       methods_idResponse_notFull,
+	       methods_configResp_enq,
+	       methods_configResp_notFull,
+	       methods_error_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: methods_error_enq, portalIfc_indications_2_deq
+ 
+Method: portalIfc_messageSize_size
+Ready signal: True
+Conflict-free: methods_idResponse_enq,
+	       methods_idResponse_notFull,
+	       methods_configResp_enq,
+	       methods_configResp_notFull,
+	       methods_error_enq,
+	       methods_error_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+ 
+Method: portalIfc_indications_0_first
+Ready signal: idResponse_responseAdapter_notEmptyReg
+Conflict-free: methods_idResponse_enq,
+	       methods_idResponse_notFull,
+	       methods_configResp_enq,
+	       methods_configResp_notFull,
+	       methods_error_enq,
+	       methods_error_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: portalIfc_indications_0_deq
+ 
+Method: portalIfc_indications_0_deq
+Ready signal: idResponse_responseAdapter_notEmptyReg
+Conflict-free: methods_idResponse_enq,
+	       methods_configResp_enq,
+	       methods_configResp_notFull,
+	       methods_error_enq,
+	       methods_error_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty
+Sequenced after: methods_idResponse_notFull,
+		 portalIfc_indications_0_first,
+		 portalIfc_indications_0_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: portalIfc_indications_0_deq
+ 
+Method: portalIfc_indications_0_notEmpty
+Ready signal: True
+Conflict-free: methods_idResponse_notFull,
+	       methods_configResp_enq,
+	       methods_configResp_notFull,
+	       methods_error_enq,
+	       methods_error_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: methods_idResponse_enq, portalIfc_indications_0_deq
+ 
+Method: portalIfc_indications_1_first
+Ready signal: configResp_responseAdapter_notEmptyReg
+Conflict-free: methods_idResponse_enq,
+	       methods_idResponse_notFull,
+	       methods_configResp_enq,
+	       methods_configResp_notFull,
+	       methods_error_enq,
+	       methods_error_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: portalIfc_indications_1_deq
+ 
+Method: portalIfc_indications_1_deq
+Ready signal: configResp_responseAdapter_notEmptyReg
+Conflict-free: methods_idResponse_enq,
+	       methods_idResponse_notFull,
+	       methods_configResp_enq,
+	       methods_error_enq,
+	       methods_error_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty
+Sequenced after: methods_configResp_notFull,
+		 portalIfc_indications_1_first,
+		 portalIfc_indications_1_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: portalIfc_indications_1_deq
+ 
+Method: portalIfc_indications_1_notEmpty
+Ready signal: True
+Conflict-free: methods_idResponse_enq,
+	       methods_idResponse_notFull,
+	       methods_configResp_notFull,
+	       methods_error_enq,
+	       methods_error_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: methods_configResp_enq, portalIfc_indications_1_deq
+ 
+Method: portalIfc_indications_2_first
+Ready signal: error_responseAdapter_notEmptyReg
+Conflict-free: methods_idResponse_enq,
+	       methods_idResponse_notFull,
+	       methods_configResp_enq,
+	       methods_configResp_notFull,
+	       methods_error_enq,
+	       methods_error_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: portalIfc_indications_2_deq
+ 
+Method: portalIfc_indications_2_deq
+Ready signal: error_responseAdapter_notEmptyReg
+Conflict-free: methods_idResponse_enq,
+	       methods_idResponse_notFull,
+	       methods_configResp_enq,
+	       methods_configResp_notFull,
+	       methods_error_enq,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty
+Sequenced after: methods_error_notFull,
+		 portalIfc_indications_2_first,
+		 portalIfc_indications_2_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: portalIfc_indications_2_deq
+ 
+Method: portalIfc_indications_2_notEmpty
+Ready signal: True
+Conflict-free: methods_idResponse_enq,
+	       methods_idResponse_notFull,
+	       methods_configResp_enq,
+	       methods_configResp_notFull,
+	       methods_error_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: methods_error_enq, portalIfc_indications_2_deq
+ 
+Method: portalIfc_intr_status
+Ready signal: True
+Conflict-free: methods_idResponse_notFull,
+	       methods_configResp_notFull,
+	       methods_error_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: methods_idResponse_enq,
+		  methods_configResp_enq,
+		  methods_error_enq,
+		  portalIfc_indications_0_deq,
+		  portalIfc_indications_1_deq,
+		  portalIfc_indications_2_deq
+ 
+Method: portalIfc_intr_channel
+Ready signal: True
+Conflict-free: methods_idResponse_notFull,
+	       methods_configResp_notFull,
+	       methods_error_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: methods_idResponse_enq,
+		  methods_configResp_enq,
+		  methods_error_enq,
+		  portalIfc_indications_0_deq,
+		  portalIfc_indications_1_deq,
+		  portalIfc_indications_2_deq
+ 
+Logical execution order: methods_idResponse_notFull,
+			 methods_configResp_notFull,
+			 methods_error_notFull,
+			 portalIfc_messageSize_size,
+			 portalIfc_indications_0_first,
+			 portalIfc_indications_0_notEmpty,
+			 portalIfc_indications_1_first,
+			 portalIfc_indications_1_notEmpty,
+			 portalIfc_indications_2_first,
+			 portalIfc_indications_2_notEmpty,
+			 portalIfc_intr_status,
+			 portalIfc_intr_channel,
+			 methods_idResponse_enq,
+			 methods_configResp_enq,
+			 methods_error_enq,
+			 portalIfc_indications_0_deq,
+			 portalIfc_indications_2_deq,
+			 portalIfc_indications_1_deq
+
+==========================================================

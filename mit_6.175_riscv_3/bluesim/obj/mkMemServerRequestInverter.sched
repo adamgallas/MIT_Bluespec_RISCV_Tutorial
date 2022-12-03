@@ -1,0 +1,102 @@
+=== Generated schedule for mkMemServerRequestInverter ===
+
+Method schedule
+---------------
+Method: ifc_addrTrans
+Ready signal: fifo_addrTrans.i_notFull
+Conflict-free: ifc_setTileState,
+	       ifc_stateDbg,
+	       ifc_memoryTraffic,
+	       inverseIfc_addrTrans,
+	       inverseIfc_setTileState,
+	       inverseIfc_stateDbg,
+	       inverseIfc_memoryTraffic
+Conflicts: ifc_addrTrans
+ 
+Method: ifc_setTileState
+Ready signal: fifo_setTileState.i_notFull
+Conflict-free: ifc_addrTrans,
+	       ifc_stateDbg,
+	       ifc_memoryTraffic,
+	       inverseIfc_addrTrans,
+	       inverseIfc_setTileState,
+	       inverseIfc_stateDbg,
+	       inverseIfc_memoryTraffic
+Conflicts: ifc_setTileState
+ 
+Method: ifc_stateDbg
+Ready signal: fifo_stateDbg.i_notFull
+Conflict-free: ifc_addrTrans,
+	       ifc_setTileState,
+	       ifc_memoryTraffic,
+	       inverseIfc_addrTrans,
+	       inverseIfc_setTileState,
+	       inverseIfc_stateDbg,
+	       inverseIfc_memoryTraffic
+Conflicts: ifc_stateDbg
+ 
+Method: ifc_memoryTraffic
+Ready signal: fifo_memoryTraffic.i_notFull
+Conflict-free: ifc_addrTrans,
+	       ifc_setTileState,
+	       ifc_stateDbg,
+	       inverseIfc_addrTrans,
+	       inverseIfc_setTileState,
+	       inverseIfc_stateDbg,
+	       inverseIfc_memoryTraffic
+Conflicts: ifc_memoryTraffic
+ 
+Method: inverseIfc_addrTrans
+Ready signal: fifo_addrTrans.i_notEmpty
+Conflict-free: ifc_addrTrans,
+	       ifc_setTileState,
+	       ifc_stateDbg,
+	       ifc_memoryTraffic,
+	       inverseIfc_setTileState,
+	       inverseIfc_stateDbg,
+	       inverseIfc_memoryTraffic
+Conflicts: inverseIfc_addrTrans
+ 
+Method: inverseIfc_setTileState
+Ready signal: fifo_setTileState.i_notEmpty
+Conflict-free: ifc_addrTrans,
+	       ifc_setTileState,
+	       ifc_stateDbg,
+	       ifc_memoryTraffic,
+	       inverseIfc_addrTrans,
+	       inverseIfc_stateDbg,
+	       inverseIfc_memoryTraffic
+Conflicts: inverseIfc_setTileState
+ 
+Method: inverseIfc_stateDbg
+Ready signal: fifo_stateDbg.i_notEmpty
+Conflict-free: ifc_addrTrans,
+	       ifc_setTileState,
+	       ifc_stateDbg,
+	       ifc_memoryTraffic,
+	       inverseIfc_addrTrans,
+	       inverseIfc_setTileState,
+	       inverseIfc_memoryTraffic
+Conflicts: inverseIfc_stateDbg
+ 
+Method: inverseIfc_memoryTraffic
+Ready signal: fifo_memoryTraffic.i_notEmpty
+Conflict-free: ifc_addrTrans,
+	       ifc_setTileState,
+	       ifc_stateDbg,
+	       ifc_memoryTraffic,
+	       inverseIfc_addrTrans,
+	       inverseIfc_setTileState,
+	       inverseIfc_stateDbg
+Conflicts: inverseIfc_memoryTraffic
+ 
+Logical execution order: ifc_addrTrans,
+			 ifc_setTileState,
+			 ifc_stateDbg,
+			 ifc_memoryTraffic,
+			 inverseIfc_addrTrans,
+			 inverseIfc_setTileState,
+			 inverseIfc_stateDbg,
+			 inverseIfc_memoryTraffic
+
+==========================================================

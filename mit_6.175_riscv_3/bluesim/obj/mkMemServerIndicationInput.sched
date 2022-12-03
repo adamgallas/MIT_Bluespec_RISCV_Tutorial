@@ -1,0 +1,632 @@
+=== Generated schedule for mkMemServerIndicationInput ===
+
+Method schedule
+---------------
+Method: portalIfc_messageSize_size
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_deq,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_deq,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_deq,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty
+ 
+Method: portalIfc_requests_0_enq
+Ready signal: ((! addrResponse_requestAdapter_count) ||
+	       addrResponse_requestAdapter_fifo.notFull) &&
+	      ((! addrResponse_requestAdapter_count) ||
+	       addrResponse_requestAdapter_fifo.i_notFull)
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_deq,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_deq,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty
+Sequenced before: pipes_addrResponse_PipeOut_deq
+Sequenced after: portalIfc_requests_0_notFull,
+		 pipes_addrResponse_PipeOut_notEmpty
+Conflicts: portalIfc_requests_0_enq
+ 
+Method: portalIfc_requests_0_notFull
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_deq,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_deq,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty
+Sequenced before: portalIfc_requests_0_enq, pipes_addrResponse_PipeOut_deq
+ 
+Method: portalIfc_requests_1_enq
+Ready signal: ((! (reportStateDbg_requestAdapter_count == 2'd3)) ||
+	       reportStateDbg_requestAdapter_fifo.notFull) &&
+	      ((! (reportStateDbg_requestAdapter_count == 2'd3)) ||
+	       reportStateDbg_requestAdapter_fifo.i_notFull)
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_deq,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_deq,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty
+Sequenced before: pipes_reportStateDbg_PipeOut_deq
+Sequenced after: portalIfc_requests_1_notFull,
+		 pipes_reportStateDbg_PipeOut_notEmpty
+Conflicts: portalIfc_requests_1_enq
+ 
+Method: portalIfc_requests_1_notFull
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_deq,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_deq,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty
+Sequenced before: portalIfc_requests_1_enq, pipes_reportStateDbg_PipeOut_deq
+ 
+Method: portalIfc_requests_2_enq
+Ready signal: ((! reportMemoryTraffic_requestAdapter_count) ||
+	       reportMemoryTraffic_requestAdapter_fifo.notFull) &&
+	      ((! reportMemoryTraffic_requestAdapter_count) ||
+	       reportMemoryTraffic_requestAdapter_fifo.i_notFull)
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_deq,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_deq,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty
+Sequenced before: pipes_reportMemoryTraffic_PipeOut_deq
+Sequenced after: portalIfc_requests_2_notFull,
+		 pipes_reportMemoryTraffic_PipeOut_notEmpty
+Conflicts: portalIfc_requests_2_enq
+ 
+Method: portalIfc_requests_2_notFull
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_deq,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_deq,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty
+Sequenced before: portalIfc_requests_2_enq,
+		  pipes_reportMemoryTraffic_PipeOut_deq
+ 
+Method: portalIfc_requests_3_enq
+Ready signal: ((error_requestAdapter_count < 3'd5) ||
+	       error_requestAdapter_fifo.notFull) &&
+	      ((! (error_requestAdapter_count == 3'd5)) ||
+	       error_requestAdapter_fifo.i_notFull)
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_deq,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_deq,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_deq,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first
+Sequenced before: pipes_error_PipeOut_deq
+Sequenced after: portalIfc_requests_3_notFull, pipes_error_PipeOut_notEmpty
+Conflicts: portalIfc_requests_3_enq
+ 
+Method: portalIfc_requests_3_notFull
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_deq,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_deq,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_deq,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_notEmpty
+Sequenced before: portalIfc_requests_3_enq, pipes_error_PipeOut_deq
+ 
+Method: portalIfc_intr_status
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_deq,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_deq,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_deq,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty
+ 
+Method: portalIfc_intr_channel
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_deq,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_deq,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_deq,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty
+ 
+Method: pipes_addrResponse_PipeOut_first
+Ready signal: addrResponse_requestAdapter_fifo.i_notEmpty
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_deq,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_deq,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty
+Sequenced before: pipes_addrResponse_PipeOut_deq
+ 
+Method: pipes_addrResponse_PipeOut_deq
+Ready signal: addrResponse_requestAdapter_fifo.i_notEmpty
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_deq,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_deq,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty
+Sequenced after: portalIfc_requests_0_enq,
+		 portalIfc_requests_0_notFull,
+		 pipes_addrResponse_PipeOut_first,
+		 pipes_addrResponse_PipeOut_notEmpty
+Conflicts: pipes_addrResponse_PipeOut_deq
+ 
+Method: pipes_addrResponse_PipeOut_notEmpty
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_deq,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_deq,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty
+Sequenced before: portalIfc_requests_0_enq, pipes_addrResponse_PipeOut_deq
+ 
+Method: pipes_reportStateDbg_PipeOut_first
+Ready signal: reportStateDbg_requestAdapter_fifo.i_notEmpty
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_deq,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_deq,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty
+Sequenced before: pipes_reportStateDbg_PipeOut_deq
+ 
+Method: pipes_reportStateDbg_PipeOut_deq
+Ready signal: reportStateDbg_requestAdapter_fifo.i_notEmpty
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_deq,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_deq,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty
+Sequenced after: portalIfc_requests_1_enq,
+		 portalIfc_requests_1_notFull,
+		 pipes_reportStateDbg_PipeOut_first,
+		 pipes_reportStateDbg_PipeOut_notEmpty
+Conflicts: pipes_reportStateDbg_PipeOut_deq
+ 
+Method: pipes_reportStateDbg_PipeOut_notEmpty
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_deq,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_deq,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty
+Sequenced before: portalIfc_requests_1_enq, pipes_reportStateDbg_PipeOut_deq
+ 
+Method: pipes_reportMemoryTraffic_PipeOut_first
+Ready signal: reportMemoryTraffic_requestAdapter_fifo.i_notEmpty
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_deq,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_deq,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty
+Sequenced before: pipes_reportMemoryTraffic_PipeOut_deq
+ 
+Method: pipes_reportMemoryTraffic_PipeOut_deq
+Ready signal: reportMemoryTraffic_requestAdapter_fifo.i_notEmpty
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_deq,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_deq,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty
+Sequenced after: portalIfc_requests_2_enq,
+		 portalIfc_requests_2_notFull,
+		 pipes_reportMemoryTraffic_PipeOut_first,
+		 pipes_reportMemoryTraffic_PipeOut_notEmpty
+Conflicts: pipes_reportMemoryTraffic_PipeOut_deq
+ 
+Method: pipes_reportMemoryTraffic_PipeOut_notEmpty
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_deq,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_deq,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty
+Sequenced before: portalIfc_requests_2_enq,
+		  pipes_reportMemoryTraffic_PipeOut_deq
+ 
+Method: pipes_error_PipeOut_first
+Ready signal: error_requestAdapter_fifo.i_notEmpty
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_enq,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_deq,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_deq,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_deq,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_notEmpty
+Sequenced before: pipes_error_PipeOut_deq
+ 
+Method: pipes_error_PipeOut_deq
+Ready signal: error_requestAdapter_fifo.i_notEmpty
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_deq,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_deq,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_deq,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty
+Sequenced after: portalIfc_requests_3_enq,
+		 portalIfc_requests_3_notFull,
+		 pipes_error_PipeOut_first,
+		 pipes_error_PipeOut_notEmpty
+Conflicts: pipes_error_PipeOut_deq
+ 
+Method: pipes_error_PipeOut_notEmpty
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_requests_3_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_addrResponse_PipeOut_first,
+	       pipes_addrResponse_PipeOut_deq,
+	       pipes_addrResponse_PipeOut_notEmpty,
+	       pipes_reportStateDbg_PipeOut_first,
+	       pipes_reportStateDbg_PipeOut_deq,
+	       pipes_reportStateDbg_PipeOut_notEmpty,
+	       pipes_reportMemoryTraffic_PipeOut_first,
+	       pipes_reportMemoryTraffic_PipeOut_deq,
+	       pipes_reportMemoryTraffic_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_notEmpty
+Sequenced before: portalIfc_requests_3_enq, pipes_error_PipeOut_deq
+ 
+Logical execution order: portalIfc_messageSize_size,
+			 portalIfc_requests_0_notFull,
+			 portalIfc_requests_1_notFull,
+			 portalIfc_requests_2_notFull,
+			 portalIfc_requests_3_notFull,
+			 portalIfc_intr_status,
+			 portalIfc_intr_channel,
+			 pipes_addrResponse_PipeOut_first,
+			 pipes_addrResponse_PipeOut_notEmpty,
+			 portalIfc_requests_0_enq,
+			 pipes_addrResponse_PipeOut_deq,
+			 pipes_reportStateDbg_PipeOut_first,
+			 pipes_reportStateDbg_PipeOut_notEmpty,
+			 portalIfc_requests_1_enq,
+			 pipes_reportStateDbg_PipeOut_deq,
+			 pipes_reportMemoryTraffic_PipeOut_first,
+			 pipes_reportMemoryTraffic_PipeOut_notEmpty,
+			 portalIfc_requests_2_enq,
+			 pipes_reportMemoryTraffic_PipeOut_deq,
+			 pipes_error_PipeOut_first,
+			 pipes_error_PipeOut_notEmpty,
+			 portalIfc_requests_3_enq,
+			 pipes_error_PipeOut_deq
+
+==========================================================

@@ -1,0 +1,23 @@
+=== Generated schedule for mkDMemory ===
+
+Method schedule
+---------------
+Method: req
+Ready signal: memInit_initialized
+Conflict-free: init_request_put, init_done
+Conflicts: req
+ 
+Method: init_request_put
+Ready signal: ! memInit_initialized
+Conflict-free: req
+Sequenced after: init_done
+Conflicts: init_request_put
+ 
+Method: init_done
+Ready signal: True
+Conflict-free: req, init_done
+Sequenced before: init_request_put
+ 
+Logical execution order: req, init_done, init_request_put
+
+=========================================

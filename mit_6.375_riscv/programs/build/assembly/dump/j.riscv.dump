@@ -1,0 +1,66 @@
+
+/home/adam/mit_6.375/lab5-harness/programs/assembly/../build/assembly/bin/j.riscv:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000200 <_start>:
+ 200:	00200e13          	li	t3,2
+ 204:	0080006f          	j	20c <test_2>
+ 208:	0380006f          	j	240 <fail>
+
+0000020c <test_2>:
+ 20c:	00100093          	li	ra,1
+ 210:	0140006f          	j	224 <test_2+0x18>
+ 214:	00108093          	addi	ra,ra,1
+ 218:	00108093          	addi	ra,ra,1
+ 21c:	00108093          	addi	ra,ra,1
+ 220:	00108093          	addi	ra,ra,1
+ 224:	00108093          	addi	ra,ra,1
+ 228:	00108093          	addi	ra,ra,1
+ 22c:	00300e93          	li	t4,3
+ 230:	00300e13          	li	t3,3
+ 234:	01d09663          	bne	ra,t4,240 <fail>
+ 238:	01c01663          	bne	zero,t3,244 <pass>
+ 23c:	00100e13          	li	t3,1
+
+00000240 <fail>:
+ 240:	00c0006f          	j	24c <exit>
+
+00000244 <pass>:
+ 244:	00000e13          	li	t3,0
+ 248:	0040006f          	j	24c <exit>
+
+0000024c <exit>:
+ 24c:	c0002573          	rdcycle	a0
+ 250:	c02025f3          	rdinstret	a1
+ 254:	01051613          	slli	a2,a0,0x10
+ 258:	01065613          	srli	a2,a2,0x10
+ 25c:	000206b7          	lui	a3,0x20
+ 260:	00d666b3          	or	a3,a2,a3
+ 264:	78069073          	csrw	mtohost,a3
+ 268:	01055613          	srli	a2,a0,0x10
+ 26c:	000306b7          	lui	a3,0x30
+ 270:	00d666b3          	or	a3,a2,a3
+ 274:	78069073          	csrw	mtohost,a3
+ 278:	00010637          	lui	a2,0x10
+ 27c:	00a60613          	addi	a2,a2,10 # 1000a <begin_signature+0xf00a>
+ 280:	78061073          	csrw	mtohost,a2
+ 284:	01059613          	slli	a2,a1,0x10
+ 288:	01065613          	srli	a2,a2,0x10
+ 28c:	000201b7          	lui	gp,0x20
+ 290:	003661b3          	or	gp,a2,gp
+ 294:	78019073          	csrw	mtohost,gp
+ 298:	0105d613          	srli	a2,a1,0x10
+ 29c:	000301b7          	lui	gp,0x30
+ 2a0:	003661b3          	or	gp,a2,gp
+ 2a4:	78019073          	csrw	mtohost,gp
+ 2a8:	00010637          	lui	a2,0x10
+ 2ac:	00a60613          	addi	a2,a2,10 # 1000a <begin_signature+0xf00a>
+ 2b0:	78061073          	csrw	mtohost,a2
+ 2b4:	780e1073          	csrw	mtohost,t3
+ 2b8:	0000006f          	j	2b8 <exit+0x6c>
+ 2bc:	0000                	.2byte	0x0
+ 2be:	0000                	.2byte	0x0
+ 2c0:	0000                	.2byte	0x0
+ 2c2:	0000                	.2byte	0x0

@@ -1,0 +1,2 @@
+
+GENERATED_CPP=GeneratedCppCallbacks.cpp MemServerRequest.c MemServerRequestJson.cpp MMURequest.c MMURequestJson.cpp MemServerIndication.c MemServerIndicationJson.cpp MMUIndication.c MMUIndicationJson.cpp XsimMsgRequest.c XsimMsgRequestJson.cpp XsimMsgIndication.c XsimMsgIndicationJson.cpp ConnectalProcRequest.c ConnectalProcRequestJson.cpp ConnectalMemoryInitialization.c ConnectalMemoryInitializationJson.cpp ConnectalProcIndication.c ConnectalProcIndicationJson.cpp

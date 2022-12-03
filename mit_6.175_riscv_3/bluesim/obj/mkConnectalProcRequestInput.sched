@@ -1,0 +1,101 @@
+=== Generated schedule for mkConnectalProcRequestInput ===
+
+Method schedule
+---------------
+Method: portalIfc_messageSize_size
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_hostToCpu_PipeOut_first,
+	       pipes_hostToCpu_PipeOut_deq,
+	       pipes_hostToCpu_PipeOut_notEmpty
+ 
+Method: portalIfc_requests_0_enq
+Ready signal: hostToCpu_requestAdapter_fifo.notFull &&
+	      hostToCpu_requestAdapter_fifo.i_notFull
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_hostToCpu_PipeOut_first
+Sequenced before: pipes_hostToCpu_PipeOut_deq
+Sequenced after: portalIfc_requests_0_notFull,
+		 pipes_hostToCpu_PipeOut_notEmpty
+Conflicts: portalIfc_requests_0_enq
+ 
+Method: portalIfc_requests_0_notFull
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_hostToCpu_PipeOut_first,
+	       pipes_hostToCpu_PipeOut_notEmpty
+Sequenced before: portalIfc_requests_0_enq, pipes_hostToCpu_PipeOut_deq
+ 
+Method: portalIfc_intr_status
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_hostToCpu_PipeOut_first,
+	       pipes_hostToCpu_PipeOut_deq,
+	       pipes_hostToCpu_PipeOut_notEmpty
+ 
+Method: portalIfc_intr_channel
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_hostToCpu_PipeOut_first,
+	       pipes_hostToCpu_PipeOut_deq,
+	       pipes_hostToCpu_PipeOut_notEmpty
+ 
+Method: pipes_hostToCpu_PipeOut_first
+Ready signal: hostToCpu_requestAdapter_fifo.i_notEmpty
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_hostToCpu_PipeOut_first,
+	       pipes_hostToCpu_PipeOut_notEmpty
+Sequenced before: pipes_hostToCpu_PipeOut_deq
+ 
+Method: pipes_hostToCpu_PipeOut_deq
+Ready signal: hostToCpu_requestAdapter_fifo.i_notEmpty
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced after: portalIfc_requests_0_enq,
+		 portalIfc_requests_0_notFull,
+		 pipes_hostToCpu_PipeOut_first,
+		 pipes_hostToCpu_PipeOut_notEmpty
+Conflicts: pipes_hostToCpu_PipeOut_deq
+ 
+Method: pipes_hostToCpu_PipeOut_notEmpty
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_hostToCpu_PipeOut_first,
+	       pipes_hostToCpu_PipeOut_notEmpty
+Sequenced before: portalIfc_requests_0_enq, pipes_hostToCpu_PipeOut_deq
+ 
+Logical execution order: portalIfc_messageSize_size,
+			 portalIfc_requests_0_notFull,
+			 portalIfc_intr_status,
+			 portalIfc_intr_channel,
+			 pipes_hostToCpu_PipeOut_first,
+			 pipes_hostToCpu_PipeOut_notEmpty,
+			 portalIfc_requests_0_enq,
+			 pipes_hostToCpu_PipeOut_deq
+
+===========================================================

@@ -1,0 +1,169 @@
+
+/home/adam/mit_6.375/lab5-harness/programs/assembly/../build/assembly/bin/simple.riscv:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000200 <_start>:
+ 200:	00000013          	nop
+ 204:	00000013          	nop
+ 208:	00000013          	nop
+ 20c:	00000013          	nop
+ 210:	00000013          	nop
+ 214:	00000013          	nop
+ 218:	00000013          	nop
+ 21c:	00000013          	nop
+ 220:	00000013          	nop
+ 224:	00000013          	nop
+ 228:	00000013          	nop
+ 22c:	00000013          	nop
+ 230:	00000013          	nop
+ 234:	00000013          	nop
+ 238:	00000013          	nop
+ 23c:	00000013          	nop
+ 240:	00000013          	nop
+ 244:	00000013          	nop
+ 248:	00000013          	nop
+ 24c:	00000013          	nop
+ 250:	00000013          	nop
+ 254:	00000013          	nop
+ 258:	00000013          	nop
+ 25c:	00000013          	nop
+ 260:	00000013          	nop
+ 264:	00000013          	nop
+ 268:	00000013          	nop
+ 26c:	00000013          	nop
+ 270:	00000013          	nop
+ 274:	00000013          	nop
+ 278:	00000013          	nop
+ 27c:	00000013          	nop
+ 280:	00000013          	nop
+ 284:	00000013          	nop
+ 288:	00000013          	nop
+ 28c:	00000013          	nop
+ 290:	00000013          	nop
+ 294:	00000013          	nop
+ 298:	00000013          	nop
+ 29c:	00000013          	nop
+ 2a0:	00000013          	nop
+ 2a4:	00000013          	nop
+ 2a8:	00000013          	nop
+ 2ac:	00000013          	nop
+ 2b0:	00000013          	nop
+ 2b4:	00000013          	nop
+ 2b8:	00000013          	nop
+ 2bc:	00000013          	nop
+ 2c0:	00000013          	nop
+ 2c4:	00000013          	nop
+ 2c8:	00000013          	nop
+ 2cc:	00000013          	nop
+ 2d0:	00000013          	nop
+ 2d4:	00000013          	nop
+ 2d8:	00000013          	nop
+ 2dc:	00000013          	nop
+ 2e0:	00000013          	nop
+ 2e4:	00000013          	nop
+ 2e8:	00000013          	nop
+ 2ec:	00000013          	nop
+ 2f0:	00000013          	nop
+ 2f4:	00000013          	nop
+ 2f8:	00000013          	nop
+ 2fc:	00000013          	nop
+ 300:	00000013          	nop
+ 304:	00000013          	nop
+ 308:	00000013          	nop
+ 30c:	00000013          	nop
+ 310:	00000013          	nop
+ 314:	00000013          	nop
+ 318:	00000013          	nop
+ 31c:	00000013          	nop
+ 320:	00000013          	nop
+ 324:	00000013          	nop
+ 328:	00000013          	nop
+ 32c:	00000013          	nop
+ 330:	00000013          	nop
+ 334:	00000013          	nop
+ 338:	00000013          	nop
+ 33c:	00000013          	nop
+ 340:	00000013          	nop
+ 344:	00000013          	nop
+ 348:	00000013          	nop
+ 34c:	00000013          	nop
+ 350:	00000013          	nop
+ 354:	00000013          	nop
+ 358:	00000013          	nop
+ 35c:	00000013          	nop
+ 360:	00000013          	nop
+ 364:	00000013          	nop
+ 368:	00000013          	nop
+ 36c:	00000013          	nop
+ 370:	00000013          	nop
+ 374:	00000013          	nop
+ 378:	00000013          	nop
+ 37c:	00000013          	nop
+ 380:	00000013          	nop
+ 384:	00000013          	nop
+ 388:	00000013          	nop
+ 38c:	00000013          	nop
+ 390:	00000e13          	li	t3,0
+ 394:	0040006f          	j	398 <exit>
+
+00000398 <exit>:
+ 398:	c0002573          	rdcycle	a0
+ 39c:	c02025f3          	rdinstret	a1
+ 3a0:	01051613          	slli	a2,a0,0x10
+ 3a4:	01065613          	srli	a2,a2,0x10
+ 3a8:	000206b7          	lui	a3,0x20
+ 3ac:	00d666b3          	or	a3,a2,a3
+ 3b0:	78069073          	csrw	mtohost,a3
+ 3b4:	01055613          	srli	a2,a0,0x10
+ 3b8:	000306b7          	lui	a3,0x30
+ 3bc:	00d666b3          	or	a3,a2,a3
+ 3c0:	78069073          	csrw	mtohost,a3
+ 3c4:	00010637          	lui	a2,0x10
+ 3c8:	00a60613          	addi	a2,a2,10 # 1000a <begin_signature+0xf00a>
+ 3cc:	78061073          	csrw	mtohost,a2
+ 3d0:	01059613          	slli	a2,a1,0x10
+ 3d4:	01065613          	srli	a2,a2,0x10
+ 3d8:	000201b7          	lui	gp,0x20
+ 3dc:	003661b3          	or	gp,a2,gp
+ 3e0:	78019073          	csrw	mtohost,gp
+ 3e4:	0105d613          	srli	a2,a1,0x10
+ 3e8:	000301b7          	lui	gp,0x30
+ 3ec:	003661b3          	or	gp,a2,gp
+ 3f0:	78019073          	csrw	mtohost,gp
+ 3f4:	00010637          	lui	a2,0x10
+ 3f8:	00a60613          	addi	a2,a2,10 # 1000a <begin_signature+0xf00a>
+ 3fc:	78061073          	csrw	mtohost,a2
+ 400:	780e1073          	csrw	mtohost,t3
+ 404:	0000006f          	j	404 <exit+0x6c>
+ 408:	0000                	.2byte	0x0
+ 40a:	0000                	.2byte	0x0
+ 40c:	0000                	.2byte	0x0
+ 40e:	0000                	.2byte	0x0
+ 410:	0000                	.2byte	0x0
+ 412:	0000                	.2byte	0x0
+ 414:	0000                	.2byte	0x0
+ 416:	0000                	.2byte	0x0
+ 418:	0000                	.2byte	0x0
+ 41a:	0000                	.2byte	0x0
+ 41c:	0000                	.2byte	0x0
+ 41e:	0000                	.2byte	0x0
+ 420:	0000                	.2byte	0x0
+ 422:	0000                	.2byte	0x0
+ 424:	0000                	.2byte	0x0
+ 426:	0000                	.2byte	0x0
+ 428:	0000                	.2byte	0x0
+ 42a:	0000                	.2byte	0x0
+ 42c:	0000                	.2byte	0x0
+ 42e:	0000                	.2byte	0x0
+ 430:	0000                	.2byte	0x0
+ 432:	0000                	.2byte	0x0
+ 434:	0000                	.2byte	0x0
+ 436:	0000                	.2byte	0x0
+ 438:	0000                	.2byte	0x0
+ 43a:	0000                	.2byte	0x0
+ 43c:	0000                	.2byte	0x0
+ 43e:	0000                	.2byte	0x0
+ 440:	0000                	.2byte	0x0
+ 442:	0000                	.2byte	0x0

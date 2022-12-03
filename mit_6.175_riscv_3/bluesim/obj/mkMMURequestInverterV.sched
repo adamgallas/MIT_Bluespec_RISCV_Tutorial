@@ -1,0 +1,146 @@
+=== Generated schedule for mkMMURequestInverterV ===
+
+Method schedule
+---------------
+Method: ifc_sglist
+Ready signal: inv_sglist_inverter.RDY_mod_put
+Conflict-free: ifc_sglist,
+	       ifc_region,
+	       ifc_idRequest,
+	       ifc_idReturn,
+	       ifc_setInterface,
+	       inverseIfc_sglist,
+	       inverseIfc_region,
+	       inverseIfc_idRequest,
+	       inverseIfc_idReturn,
+	       inverseIfc_setInterface
+ 
+Method: ifc_region
+Ready signal: inv_region_inverter.RDY_mod_put
+Conflict-free: ifc_sglist,
+	       ifc_region,
+	       ifc_idRequest,
+	       ifc_idReturn,
+	       ifc_setInterface,
+	       inverseIfc_sglist,
+	       inverseIfc_region,
+	       inverseIfc_idRequest,
+	       inverseIfc_idReturn,
+	       inverseIfc_setInterface
+ 
+Method: ifc_idRequest
+Ready signal: inv_idRequest_inverter.RDY_mod_put
+Conflict-free: ifc_sglist,
+	       ifc_region,
+	       ifc_idRequest,
+	       ifc_idReturn,
+	       ifc_setInterface,
+	       inverseIfc_sglist,
+	       inverseIfc_region,
+	       inverseIfc_idRequest,
+	       inverseIfc_idReturn,
+	       inverseIfc_setInterface
+ 
+Method: ifc_idReturn
+Ready signal: inv_idReturn_inverter.RDY_mod_put
+Conflict-free: ifc_sglist,
+	       ifc_region,
+	       ifc_idRequest,
+	       ifc_idReturn,
+	       ifc_setInterface,
+	       inverseIfc_sglist,
+	       inverseIfc_region,
+	       inverseIfc_idRequest,
+	       inverseIfc_idReturn,
+	       inverseIfc_setInterface
+ 
+Method: ifc_setInterface
+Ready signal: inv_setInterface_inverter.RDY_mod_put
+Conflict-free: ifc_sglist,
+	       ifc_region,
+	       ifc_idRequest,
+	       ifc_idReturn,
+	       ifc_setInterface,
+	       inverseIfc_sglist,
+	       inverseIfc_region,
+	       inverseIfc_idRequest,
+	       inverseIfc_idReturn,
+	       inverseIfc_setInterface
+ 
+Method: inverseIfc_sglist
+Ready signal: inv_sglist_inverter.RDY_inverse_get
+Conflict-free: ifc_sglist,
+	       ifc_region,
+	       ifc_idRequest,
+	       ifc_idReturn,
+	       ifc_setInterface,
+	       inverseIfc_sglist,
+	       inverseIfc_region,
+	       inverseIfc_idRequest,
+	       inverseIfc_idReturn,
+	       inverseIfc_setInterface
+ 
+Method: inverseIfc_region
+Ready signal: inv_region_inverter.RDY_inverse_get
+Conflict-free: ifc_sglist,
+	       ifc_region,
+	       ifc_idRequest,
+	       ifc_idReturn,
+	       ifc_setInterface,
+	       inverseIfc_sglist,
+	       inverseIfc_region,
+	       inverseIfc_idRequest,
+	       inverseIfc_idReturn,
+	       inverseIfc_setInterface
+ 
+Method: inverseIfc_idRequest
+Ready signal: inv_idRequest_inverter.RDY_inverse_get
+Conflict-free: ifc_sglist,
+	       ifc_region,
+	       ifc_idRequest,
+	       ifc_idReturn,
+	       ifc_setInterface,
+	       inverseIfc_sglist,
+	       inverseIfc_region,
+	       inverseIfc_idRequest,
+	       inverseIfc_idReturn,
+	       inverseIfc_setInterface
+ 
+Method: inverseIfc_idReturn
+Ready signal: inv_idReturn_inverter.RDY_inverse_get
+Conflict-free: ifc_sglist,
+	       ifc_region,
+	       ifc_idRequest,
+	       ifc_idReturn,
+	       ifc_setInterface,
+	       inverseIfc_sglist,
+	       inverseIfc_region,
+	       inverseIfc_idRequest,
+	       inverseIfc_idReturn,
+	       inverseIfc_setInterface
+ 
+Method: inverseIfc_setInterface
+Ready signal: inv_setInterface_inverter.RDY_inverse_get
+Conflict-free: ifc_sglist,
+	       ifc_region,
+	       ifc_idRequest,
+	       ifc_idReturn,
+	       ifc_setInterface,
+	       inverseIfc_sglist,
+	       inverseIfc_region,
+	       inverseIfc_idRequest,
+	       inverseIfc_idReturn,
+	       inverseIfc_setInterface
+ 
+Logical execution order: ifc_sglist,
+			 ifc_region,
+			 ifc_idRequest,
+			 ifc_idReturn,
+			 ifc_setInterface,
+			 inverseIfc_sglist,
+			 inverseIfc_region,
+			 inverseIfc_idRequest,
+			 inverseIfc_idReturn,
+			 inverseIfc_setInterface
+
+=====================================================

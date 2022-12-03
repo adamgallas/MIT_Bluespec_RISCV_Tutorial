@@ -1,0 +1,102 @@
+=== Generated schedule for mkMemServerIndicationInverterV ===
+
+Method schedule
+---------------
+Method: ifc_addrResponse
+Ready signal: inv_addrResponse_inverter.RDY_mod_put
+Conflict-free: ifc_addrResponse,
+	       ifc_reportStateDbg,
+	       ifc_reportMemoryTraffic,
+	       ifc_error,
+	       inverseIfc_addrResponse,
+	       inverseIfc_reportStateDbg,
+	       inverseIfc_reportMemoryTraffic,
+	       inverseIfc_error
+ 
+Method: ifc_reportStateDbg
+Ready signal: inv_reportStateDbg_inverter.RDY_mod_put
+Conflict-free: ifc_addrResponse,
+	       ifc_reportStateDbg,
+	       ifc_reportMemoryTraffic,
+	       ifc_error,
+	       inverseIfc_addrResponse,
+	       inverseIfc_reportStateDbg,
+	       inverseIfc_reportMemoryTraffic,
+	       inverseIfc_error
+ 
+Method: ifc_reportMemoryTraffic
+Ready signal: inv_reportMemoryTraffic_inverter.RDY_mod_put
+Conflict-free: ifc_addrResponse,
+	       ifc_reportStateDbg,
+	       ifc_reportMemoryTraffic,
+	       ifc_error,
+	       inverseIfc_addrResponse,
+	       inverseIfc_reportStateDbg,
+	       inverseIfc_reportMemoryTraffic,
+	       inverseIfc_error
+ 
+Method: ifc_error
+Ready signal: inv_error_inverter.RDY_mod_put
+Conflict-free: ifc_addrResponse,
+	       ifc_reportStateDbg,
+	       ifc_reportMemoryTraffic,
+	       ifc_error,
+	       inverseIfc_addrResponse,
+	       inverseIfc_reportStateDbg,
+	       inverseIfc_reportMemoryTraffic,
+	       inverseIfc_error
+ 
+Method: inverseIfc_addrResponse
+Ready signal: inv_addrResponse_inverter.RDY_inverse_get
+Conflict-free: ifc_addrResponse,
+	       ifc_reportStateDbg,
+	       ifc_reportMemoryTraffic,
+	       ifc_error,
+	       inverseIfc_addrResponse,
+	       inverseIfc_reportStateDbg,
+	       inverseIfc_reportMemoryTraffic,
+	       inverseIfc_error
+ 
+Method: inverseIfc_reportStateDbg
+Ready signal: inv_reportStateDbg_inverter.RDY_inverse_get
+Conflict-free: ifc_addrResponse,
+	       ifc_reportStateDbg,
+	       ifc_reportMemoryTraffic,
+	       ifc_error,
+	       inverseIfc_addrResponse,
+	       inverseIfc_reportStateDbg,
+	       inverseIfc_reportMemoryTraffic,
+	       inverseIfc_error
+ 
+Method: inverseIfc_reportMemoryTraffic
+Ready signal: inv_reportMemoryTraffic_inverter.RDY_inverse_get
+Conflict-free: ifc_addrResponse,
+	       ifc_reportStateDbg,
+	       ifc_reportMemoryTraffic,
+	       ifc_error,
+	       inverseIfc_addrResponse,
+	       inverseIfc_reportStateDbg,
+	       inverseIfc_reportMemoryTraffic,
+	       inverseIfc_error
+ 
+Method: inverseIfc_error
+Ready signal: inv_error_inverter.RDY_inverse_get
+Conflict-free: ifc_addrResponse,
+	       ifc_reportStateDbg,
+	       ifc_reportMemoryTraffic,
+	       ifc_error,
+	       inverseIfc_addrResponse,
+	       inverseIfc_reportStateDbg,
+	       inverseIfc_reportMemoryTraffic,
+	       inverseIfc_error
+ 
+Logical execution order: ifc_addrResponse,
+			 ifc_reportStateDbg,
+			 ifc_reportMemoryTraffic,
+			 ifc_error,
+			 inverseIfc_addrResponse,
+			 inverseIfc_reportStateDbg,
+			 inverseIfc_reportMemoryTraffic,
+			 inverseIfc_error
+
+==============================================================

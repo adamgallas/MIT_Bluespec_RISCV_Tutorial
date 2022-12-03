@@ -1,0 +1,395 @@
+=== Generated schedule for mkMMUIndicationWrapperMemPortalPipes ===
+
+Method schedule
+---------------
+Method: pipes_idResponse_PipeOut_first
+Ready signal: dut.RDY_pipes_idResponse_PipeOut_first
+Conflict-free: pipes_idResponse_PipeOut_first,
+	       pipes_idResponse_PipeOut_notEmpty,
+	       pipes_configResp_PipeOut_first,
+	       pipes_configResp_PipeOut_deq,
+	       pipes_configResp_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty,
+	       portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write
+Sequenced before: pipes_idResponse_PipeOut_deq
+ 
+Method: pipes_idResponse_PipeOut_deq
+Ready signal: dut.RDY_pipes_idResponse_PipeOut_deq
+Conflict-free: pipes_configResp_PipeOut_first,
+	       pipes_configResp_PipeOut_deq,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_num_portals__write
+Sequenced after: pipes_idResponse_PipeOut_first
+Sequenced after (restricted): pipes_idResponse_PipeOut_notEmpty,
+			      pipes_configResp_PipeOut_notEmpty,
+			      pipes_error_PipeOut_notEmpty,
+			      portalIfc_interrupt__read
+Conflicts: pipes_idResponse_PipeOut_deq
+ 
+Method: pipes_idResponse_PipeOut_notEmpty
+Ready signal: True
+Conflict-free: pipes_idResponse_PipeOut_first,
+	       pipes_idResponse_PipeOut_notEmpty,
+	       pipes_configResp_PipeOut_first,
+	       pipes_configResp_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_notEmpty,
+	       portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write
+Sequenced before (restricted): pipes_idResponse_PipeOut_deq,
+			       pipes_configResp_PipeOut_deq,
+			       pipes_error_PipeOut_deq
+ 
+Method: pipes_configResp_PipeOut_first
+Ready signal: dut.RDY_pipes_configResp_PipeOut_first
+Conflict-free: pipes_idResponse_PipeOut_first,
+	       pipes_idResponse_PipeOut_deq,
+	       pipes_idResponse_PipeOut_notEmpty,
+	       pipes_configResp_PipeOut_first,
+	       pipes_configResp_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty,
+	       portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write
+Sequenced before: pipes_configResp_PipeOut_deq
+ 
+Method: pipes_configResp_PipeOut_deq
+Ready signal: dut.RDY_pipes_configResp_PipeOut_deq
+Conflict-free: pipes_idResponse_PipeOut_first,
+	       pipes_idResponse_PipeOut_deq,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_num_portals__write
+Sequenced after: pipes_configResp_PipeOut_first
+Sequenced after (restricted): pipes_idResponse_PipeOut_notEmpty,
+			      pipes_configResp_PipeOut_notEmpty,
+			      pipes_error_PipeOut_notEmpty,
+			      portalIfc_interrupt__read
+Conflicts: pipes_configResp_PipeOut_deq
+ 
+Method: pipes_configResp_PipeOut_notEmpty
+Ready signal: True
+Conflict-free: pipes_idResponse_PipeOut_first,
+	       pipes_idResponse_PipeOut_notEmpty,
+	       pipes_configResp_PipeOut_first,
+	       pipes_configResp_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_notEmpty,
+	       portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write
+Sequenced before (restricted): pipes_idResponse_PipeOut_deq,
+			       pipes_configResp_PipeOut_deq,
+			       pipes_error_PipeOut_deq
+ 
+Method: pipes_error_PipeOut_first
+Ready signal: dut.RDY_pipes_error_PipeOut_first
+Conflict-free: pipes_idResponse_PipeOut_first,
+	       pipes_idResponse_PipeOut_deq,
+	       pipes_idResponse_PipeOut_notEmpty,
+	       pipes_configResp_PipeOut_first,
+	       pipes_configResp_PipeOut_deq,
+	       pipes_configResp_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_notEmpty,
+	       portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write
+Sequenced before: pipes_error_PipeOut_deq
+ 
+Method: pipes_error_PipeOut_deq
+Ready signal: dut.RDY_pipes_error_PipeOut_deq
+Conflict-free: pipes_idResponse_PipeOut_first,
+	       pipes_idResponse_PipeOut_deq,
+	       pipes_configResp_PipeOut_first,
+	       pipes_configResp_PipeOut_deq,
+	       portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_num_portals__write
+Sequenced after: pipes_error_PipeOut_first
+Sequenced after (restricted): pipes_idResponse_PipeOut_notEmpty,
+			      pipes_configResp_PipeOut_notEmpty,
+			      pipes_error_PipeOut_notEmpty,
+			      portalIfc_interrupt__read
+Conflicts: pipes_error_PipeOut_deq
+ 
+Method: pipes_error_PipeOut_notEmpty
+Ready signal: True
+Conflict-free: pipes_idResponse_PipeOut_first,
+	       pipes_idResponse_PipeOut_notEmpty,
+	       pipes_configResp_PipeOut_first,
+	       pipes_configResp_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_notEmpty,
+	       portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write
+Sequenced before (restricted): pipes_idResponse_PipeOut_deq,
+			       pipes_configResp_PipeOut_deq,
+			       pipes_error_PipeOut_deq
+ 
+Method: portalIfc_slave_read_server_readReq_put
+Ready signal: memslave_req_ars.i_notFull &&
+	      memslave_rs.i_notFull && memslave_rsCtrl.i_notFull
+Conflict-free: pipes_idResponse_PipeOut_first,
+	       pipes_idResponse_PipeOut_deq,
+	       pipes_idResponse_PipeOut_notEmpty,
+	       pipes_configResp_PipeOut_first,
+	       pipes_configResp_PipeOut_deq,
+	       pipes_configResp_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write
+Conflicts: portalIfc_slave_read_server_readReq_put
+ 
+Method: portalIfc_slave_read_server_readData_get
+Ready signal: memslave_rvFifo.i_notEmpty
+Conflict-free: pipes_idResponse_PipeOut_first,
+	       pipes_idResponse_PipeOut_deq,
+	       pipes_idResponse_PipeOut_notEmpty,
+	       pipes_configResp_PipeOut_first,
+	       pipes_configResp_PipeOut_deq,
+	       pipes_configResp_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty,
+	       portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write
+Conflicts: portalIfc_slave_read_server_readData_get
+ 
+Method: portalIfc_slave_write_server_writeReq_put
+Ready signal: memslave_req_aws.i_notFull &&
+	      memslave_ws.i_notFull && memslave_wsCtrl.i_notFull
+Conflict-free: pipes_idResponse_PipeOut_first,
+	       pipes_idResponse_PipeOut_deq,
+	       pipes_idResponse_PipeOut_notEmpty,
+	       pipes_configResp_PipeOut_first,
+	       pipes_configResp_PipeOut_deq,
+	       pipes_configResp_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty,
+	       portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write
+Conflicts: portalIfc_slave_write_server_writeReq_put
+ 
+Method: portalIfc_slave_write_server_writeData_put
+Ready signal: memslave_writeDataFifo.i_notFull
+Conflict-free: pipes_idResponse_PipeOut_first,
+	       pipes_idResponse_PipeOut_deq,
+	       pipes_idResponse_PipeOut_notEmpty,
+	       pipes_configResp_PipeOut_first,
+	       pipes_configResp_PipeOut_deq,
+	       pipes_configResp_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty,
+	       portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write
+Conflicts: portalIfc_slave_write_server_writeData_put
+ 
+Method: portalIfc_slave_write_server_writeDone_get
+Ready signal: memslave_doneFifo.i_notEmpty
+Conflict-free: pipes_idResponse_PipeOut_first,
+	       pipes_idResponse_PipeOut_deq,
+	       pipes_idResponse_PipeOut_notEmpty,
+	       pipes_configResp_PipeOut_first,
+	       pipes_configResp_PipeOut_deq,
+	       pipes_configResp_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty,
+	       portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write
+Conflicts: portalIfc_slave_write_server_writeDone_get
+ 
+Method: portalIfc_interrupt__read
+Ready signal: True
+Conflict-free: pipes_idResponse_PipeOut_first,
+	       pipes_idResponse_PipeOut_notEmpty,
+	       pipes_configResp_PipeOut_first,
+	       pipes_configResp_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_notEmpty,
+	       portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write
+Sequenced before (restricted): pipes_idResponse_PipeOut_deq,
+			       pipes_configResp_PipeOut_deq,
+			       pipes_error_PipeOut_deq
+ 
+Method: portalIfc_num_portals__write
+Ready signal: True
+Conflict-free: pipes_idResponse_PipeOut_first,
+	       pipes_idResponse_PipeOut_deq,
+	       pipes_idResponse_PipeOut_notEmpty,
+	       pipes_configResp_PipeOut_first,
+	       pipes_configResp_PipeOut_deq,
+	       pipes_configResp_PipeOut_notEmpty,
+	       pipes_error_PipeOut_first,
+	       pipes_error_PipeOut_deq,
+	       pipes_error_PipeOut_notEmpty,
+	       portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read
+Sequenced before (restricted): portalIfc_num_portals__write
+ 
+Rule schedule
+-------------
+Rule: ctrlPort_count
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memslave_fifoReadAddrGenerator_addrBeatRule
+Predicate: memslave_fifoReadAddrGenerator_requestFifo.i_notEmpty &&
+	   memslave_fifoReadAddrGenerator_addrBeatFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_fifoWriteAddrGenerator_addrBeatRule
+Predicate: memslave_fifoWriteAddrGenerator_requestFifo.i_notEmpty &&
+	   memslave_fifoWriteAddrGenerator_addrBeatFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_write_done
+Predicate: memslave_fifoWriteDoneFifo.i_notEmpty &&
+	   memslave_ws.i_notEmpty &&
+	   memslave_wsCtrl.i_notEmpty && memslave_doneFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_req_aw
+Predicate: memslave_req_aws.i_notEmpty &&
+	   memslave_fifoWriteAddrGenerator_requestFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_req_ar
+Predicate: memslave_req_ars.i_notEmpty &&
+	   memslave_fifoReadAddrGenerator_requestFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_writeDataRule
+Predicate: memslave_wsCtrl.i_notEmpty &&
+	   memslave_writeDataFifo.i_notEmpty &&
+	   memslave_fifoWriteAddrGenerator_addrBeatFifo.i_notEmpty &&
+	   ((! memslave_fifoWriteAddrGenerator_addrBeatFifo.first[0]) ||
+	    memslave_fifoWriteDoneFifo.i_notFull) &&
+	   (memslave_wsCtrl.first ||
+	    (memslave_ws.i_notEmpty &&
+	     case memslave_ws.first of
+	     2'd0 -> dut.RDY_portalIfc_requests_0_enq
+	     2'd1 -> dut.RDY_portalIfc_requests_1_enq
+	     2'd2 -> dut.RDY_portalIfc_requests_2_enq
+	     _ -> 1'd1))
+Blocking rules: (none)
+ 
+Rule: memslave_rvrule
+Predicate: memslave_fifoReadAddrGenerator_addrBeatFifo.i_notEmpty &&
+	   memslave_rsCtrl.i_notEmpty &&
+	   memslave_rvFifo.i_notFull &&
+	   (memslave_rsCtrl.first ||
+	    (! (memslave_fifoReadAddrGenerator_addrBeatFifo.first[21:17] ==
+		5'd4)) ||
+	    memslave_rs.i_notEmpty) &&
+	   ((! memslave_fifoReadAddrGenerator_addrBeatFifo.first[0]) ||
+	    memslave_rs.i_notEmpty)
+Blocking rules: (none)
+ 
+Logical execution order: pipes_idResponse_PipeOut_first,
+			 pipes_idResponse_PipeOut_notEmpty,
+			 pipes_configResp_PipeOut_first,
+			 pipes_configResp_PipeOut_notEmpty,
+			 pipes_error_PipeOut_first,
+			 pipes_error_PipeOut_notEmpty,
+			 portalIfc_slave_read_server_readReq_put,
+			 portalIfc_slave_read_server_readData_get,
+			 portalIfc_slave_write_server_writeReq_put,
+			 portalIfc_slave_write_server_writeData_put,
+			 portalIfc_slave_write_server_writeDone_get,
+			 portalIfc_interrupt__read,
+			 memslave_req_aw,
+			 memslave_req_ar,
+			 memslave_rvrule,
+			 portalIfc_num_portals__write,
+			 ctrlPort_count,
+			 memslave_writeDataRule,
+			 pipes_idResponse_PipeOut_deq,
+			 pipes_configResp_PipeOut_deq,
+			 pipes_error_PipeOut_deq,
+			 memslave_write_done,
+			 memslave_fifoReadAddrGenerator_addrBeatRule,
+			 memslave_fifoWriteAddrGenerator_addrBeatRule
+
+====================================================================

@@ -1,0 +1,7 @@
+twostageehr
+		cycles	insts
+tower		22151	4168
+median		12594	2711
+multiply	55054	26750
+qsort		22898	11012
+vvad		5922	1033

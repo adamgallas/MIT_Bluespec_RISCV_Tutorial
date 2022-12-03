@@ -1,0 +1,619 @@
+=== Generated schedule for mkMemServerRequestOutputPipes ===
+
+Method schedule
+---------------
+Method: methods_addrTrans_enq
+Ready signal: ! addrTrans_responseAdapter_notEmptyReg
+Conflict-free: methods_setTileState_enq,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_enq,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_enq,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_deq,
+	       portalIfc_indications_3_notEmpty
+Sequenced after: methods_addrTrans_notFull,
+		 portalIfc_indications_0_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: methods_addrTrans_enq
+ 
+Method: methods_addrTrans_notFull
+Ready signal: True
+Conflict-free: methods_addrTrans_notFull,
+	       methods_setTileState_enq,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_enq,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_enq,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_deq,
+	       portalIfc_indications_3_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: methods_addrTrans_enq, portalIfc_indications_0_deq
+ 
+Method: methods_setTileState_enq
+Ready signal: ! setTileState_responseAdapter_notEmptyReg
+Conflict-free: methods_addrTrans_enq,
+	       methods_addrTrans_notFull,
+	       methods_stateDbg_enq,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_enq,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_deq,
+	       portalIfc_indications_3_notEmpty
+Sequenced after: methods_setTileState_notFull,
+		 portalIfc_indications_1_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: methods_setTileState_enq
+ 
+Method: methods_setTileState_notFull
+Ready signal: True
+Conflict-free: methods_addrTrans_enq,
+	       methods_addrTrans_notFull,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_enq,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_enq,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_deq,
+	       portalIfc_indications_3_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: methods_setTileState_enq, portalIfc_indications_1_deq
+ 
+Method: methods_stateDbg_enq
+Ready signal: ! stateDbg_responseAdapter_notEmptyReg
+Conflict-free: methods_addrTrans_enq,
+	       methods_addrTrans_notFull,
+	       methods_setTileState_enq,
+	       methods_setTileState_notFull,
+	       methods_memoryTraffic_enq,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_deq,
+	       portalIfc_indications_3_notEmpty
+Sequenced after: methods_stateDbg_notFull,
+		 portalIfc_indications_2_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: methods_stateDbg_enq
+ 
+Method: methods_stateDbg_notFull
+Ready signal: True
+Conflict-free: methods_addrTrans_enq,
+	       methods_addrTrans_notFull,
+	       methods_setTileState_enq,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_enq,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_deq,
+	       portalIfc_indications_3_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: methods_stateDbg_enq, portalIfc_indications_2_deq
+ 
+Method: methods_memoryTraffic_enq
+Ready signal: ! memoryTraffic_responseAdapter_notEmptyReg
+Conflict-free: methods_addrTrans_enq,
+	       methods_addrTrans_notFull,
+	       methods_setTileState_enq,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_enq,
+	       methods_stateDbg_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_deq
+Sequenced after: methods_memoryTraffic_notFull,
+		 portalIfc_indications_3_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: methods_memoryTraffic_enq
+ 
+Method: methods_memoryTraffic_notFull
+Ready signal: True
+Conflict-free: methods_addrTrans_enq,
+	       methods_addrTrans_notFull,
+	       methods_setTileState_enq,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_enq,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: methods_memoryTraffic_enq, portalIfc_indications_3_deq
+ 
+Method: portalIfc_messageSize_size
+Ready signal: True
+Conflict-free: methods_addrTrans_enq,
+	       methods_addrTrans_notFull,
+	       methods_setTileState_enq,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_enq,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_enq,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_deq,
+	       portalIfc_indications_3_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+ 
+Method: portalIfc_indications_0_first
+Ready signal: addrTrans_responseAdapter_notEmptyReg
+Conflict-free: methods_addrTrans_enq,
+	       methods_addrTrans_notFull,
+	       methods_setTileState_enq,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_enq,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_enq,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_deq,
+	       portalIfc_indications_3_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: portalIfc_indications_0_deq
+ 
+Method: portalIfc_indications_0_deq
+Ready signal: addrTrans_responseAdapter_notEmptyReg
+Conflict-free: methods_addrTrans_enq,
+	       methods_setTileState_enq,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_enq,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_enq,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_deq,
+	       portalIfc_indications_3_notEmpty
+Sequenced after: methods_addrTrans_notFull,
+		 portalIfc_indications_0_first,
+		 portalIfc_indications_0_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: portalIfc_indications_0_deq
+ 
+Method: portalIfc_indications_0_notEmpty
+Ready signal: True
+Conflict-free: methods_addrTrans_notFull,
+	       methods_setTileState_enq,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_enq,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_enq,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_deq,
+	       portalIfc_indications_3_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: methods_addrTrans_enq, portalIfc_indications_0_deq
+ 
+Method: portalIfc_indications_1_first
+Ready signal: setTileState_responseAdapter_notEmptyReg
+Conflict-free: methods_addrTrans_enq,
+	       methods_addrTrans_notFull,
+	       methods_setTileState_enq,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_enq,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_enq,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_deq,
+	       portalIfc_indications_3_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: portalIfc_indications_1_deq
+ 
+Method: portalIfc_indications_1_deq
+Ready signal: setTileState_responseAdapter_notEmptyReg
+Conflict-free: methods_addrTrans_enq,
+	       methods_addrTrans_notFull,
+	       methods_setTileState_enq,
+	       methods_stateDbg_enq,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_enq,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_deq,
+	       portalIfc_indications_3_notEmpty
+Sequenced after: methods_setTileState_notFull,
+		 portalIfc_indications_1_first,
+		 portalIfc_indications_1_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: portalIfc_indications_1_deq
+ 
+Method: portalIfc_indications_1_notEmpty
+Ready signal: True
+Conflict-free: methods_addrTrans_enq,
+	       methods_addrTrans_notFull,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_enq,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_enq,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_deq,
+	       portalIfc_indications_3_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: methods_setTileState_enq, portalIfc_indications_1_deq
+ 
+Method: portalIfc_indications_2_first
+Ready signal: stateDbg_responseAdapter_notEmptyReg
+Conflict-free: methods_addrTrans_enq,
+	       methods_addrTrans_notFull,
+	       methods_setTileState_enq,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_enq,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_enq,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_deq,
+	       portalIfc_indications_3_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: portalIfc_indications_2_deq
+ 
+Method: portalIfc_indications_2_deq
+Ready signal: stateDbg_responseAdapter_notEmptyReg
+Conflict-free: methods_addrTrans_enq,
+	       methods_addrTrans_notFull,
+	       methods_setTileState_enq,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_enq,
+	       methods_memoryTraffic_enq,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_deq,
+	       portalIfc_indications_3_notEmpty
+Sequenced after: methods_stateDbg_notFull,
+		 portalIfc_indications_2_first,
+		 portalIfc_indications_2_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: portalIfc_indications_2_deq
+ 
+Method: portalIfc_indications_2_notEmpty
+Ready signal: True
+Conflict-free: methods_addrTrans_enq,
+	       methods_addrTrans_notFull,
+	       methods_setTileState_enq,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_enq,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_deq,
+	       portalIfc_indications_3_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: methods_stateDbg_enq, portalIfc_indications_2_deq
+ 
+Method: portalIfc_indications_3_first
+Ready signal: memoryTraffic_responseAdapter_notEmptyReg
+Conflict-free: methods_addrTrans_enq,
+	       methods_addrTrans_notFull,
+	       methods_setTileState_enq,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_enq,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_enq,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: portalIfc_indications_3_deq
+ 
+Method: portalIfc_indications_3_deq
+Ready signal: memoryTraffic_responseAdapter_notEmptyReg
+Conflict-free: methods_addrTrans_enq,
+	       methods_addrTrans_notFull,
+	       methods_setTileState_enq,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_enq,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_enq,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty
+Sequenced after: methods_memoryTraffic_notFull,
+		 portalIfc_indications_3_first,
+		 portalIfc_indications_3_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: portalIfc_indications_3_deq
+ 
+Method: portalIfc_indications_3_notEmpty
+Ready signal: True
+Conflict-free: methods_addrTrans_enq,
+	       methods_addrTrans_notFull,
+	       methods_setTileState_enq,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_enq,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: methods_memoryTraffic_enq, portalIfc_indications_3_deq
+ 
+Method: portalIfc_intr_status
+Ready signal: True
+Conflict-free: methods_addrTrans_notFull,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: methods_addrTrans_enq,
+		  methods_setTileState_enq,
+		  methods_stateDbg_enq,
+		  methods_memoryTraffic_enq,
+		  portalIfc_indications_0_deq,
+		  portalIfc_indications_1_deq,
+		  portalIfc_indications_2_deq,
+		  portalIfc_indications_3_deq
+ 
+Method: portalIfc_intr_channel
+Ready signal: True
+Conflict-free: methods_addrTrans_notFull,
+	       methods_setTileState_notFull,
+	       methods_stateDbg_notFull,
+	       methods_memoryTraffic_notFull,
+	       portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_indications_3_first,
+	       portalIfc_indications_3_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: methods_addrTrans_enq,
+		  methods_setTileState_enq,
+		  methods_stateDbg_enq,
+		  methods_memoryTraffic_enq,
+		  portalIfc_indications_0_deq,
+		  portalIfc_indications_1_deq,
+		  portalIfc_indications_2_deq,
+		  portalIfc_indications_3_deq
+ 
+Logical execution order: methods_addrTrans_notFull,
+			 methods_setTileState_notFull,
+			 methods_stateDbg_notFull,
+			 methods_memoryTraffic_notFull,
+			 portalIfc_messageSize_size,
+			 portalIfc_indications_0_first,
+			 portalIfc_indications_0_notEmpty,
+			 portalIfc_indications_1_first,
+			 portalIfc_indications_1_notEmpty,
+			 portalIfc_indications_2_first,
+			 portalIfc_indications_2_notEmpty,
+			 portalIfc_indications_3_first,
+			 portalIfc_indications_3_notEmpty,
+			 portalIfc_intr_status,
+			 portalIfc_intr_channel,
+			 methods_addrTrans_enq,
+			 methods_setTileState_enq,
+			 methods_stateDbg_enq,
+			 methods_memoryTraffic_enq,
+			 portalIfc_indications_0_deq,
+			 portalIfc_indications_1_deq,
+			 portalIfc_indications_3_deq,
+			 portalIfc_indications_2_deq
+
+=============================================================

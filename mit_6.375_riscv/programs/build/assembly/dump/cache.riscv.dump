@@ -1,0 +1,101 @@
+
+/home/adam/mit_6.375/lab5-harness/programs/assembly/../build/assembly/bin/cache.riscv:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000200 <_start>:
+ 200:	000040b7          	lui	ra,0x4
+ 204:	00006137          	lui	sp,0x6
+ 208:	10000193          	li	gp,256
+ 20c:	0030a023          	sw	gp,0(ra) # 4000 <begin_signature+0x3000>
+ 210:	10100193          	li	gp,257
+ 214:	0030a223          	sw	gp,4(ra)
+ 218:	20000193          	li	gp,512
+ 21c:	00312023          	sw	gp,0(sp) # 6000 <begin_signature+0x5000>
+ 220:	20100193          	li	gp,513
+ 224:	00312223          	sw	gp,4(sp)
+ 228:	0000a183          	lw	gp,0(ra)
+ 22c:	10000213          	li	tp,256
+ 230:	00100e13          	li	t3,1
+ 234:	06321c63          	bne	tp,gp,2ac <fail>
+ 238:	0040a183          	lw	gp,4(ra)
+ 23c:	10100213          	li	tp,257
+ 240:	00200e13          	li	t3,2
+ 244:	06321463          	bne	tp,gp,2ac <fail>
+ 248:	0000a183          	lw	gp,0(ra)
+ 24c:	0f018193          	addi	gp,gp,240
+ 250:	0030a023          	sw	gp,0(ra)
+ 254:	0040a183          	lw	gp,4(ra)
+ 258:	0f018193          	addi	gp,gp,240
+ 25c:	0030a223          	sw	gp,4(ra)
+ 260:	00012183          	lw	gp,0(sp)
+ 264:	20000213          	li	tp,512
+ 268:	00300e13          	li	t3,3
+ 26c:	04321063          	bne	tp,gp,2ac <fail>
+ 270:	00412183          	lw	gp,4(sp)
+ 274:	20100213          	li	tp,513
+ 278:	00400e13          	li	t3,4
+ 27c:	02321863          	bne	tp,gp,2ac <fail>
+ 280:	0000a183          	lw	gp,0(ra)
+ 284:	1f000213          	li	tp,496
+ 288:	00500e13          	li	t3,5
+ 28c:	02321063          	bne	tp,gp,2ac <fail>
+ 290:	0040a183          	lw	gp,4(ra)
+ 294:	1f100213          	li	tp,497
+ 298:	00600e13          	li	t3,6
+ 29c:	00321863          	bne	tp,gp,2ac <fail>
+ 2a0:	0100006f          	j	2b0 <pass>
+ 2a4:	01c01663          	bne	zero,t3,2b0 <pass>
+ 2a8:	00100e13          	li	t3,1
+
+000002ac <fail>:
+ 2ac:	00c0006f          	j	2b8 <exit>
+
+000002b0 <pass>:
+ 2b0:	00000e13          	li	t3,0
+ 2b4:	0040006f          	j	2b8 <exit>
+
+000002b8 <exit>:
+ 2b8:	c0002573          	rdcycle	a0
+ 2bc:	c02025f3          	rdinstret	a1
+ 2c0:	01051613          	slli	a2,a0,0x10
+ 2c4:	01065613          	srli	a2,a2,0x10
+ 2c8:	000206b7          	lui	a3,0x20
+ 2cc:	00d666b3          	or	a3,a2,a3
+ 2d0:	78069073          	csrw	mtohost,a3
+ 2d4:	01055613          	srli	a2,a0,0x10
+ 2d8:	000306b7          	lui	a3,0x30
+ 2dc:	00d666b3          	or	a3,a2,a3
+ 2e0:	78069073          	csrw	mtohost,a3
+ 2e4:	00010637          	lui	a2,0x10
+ 2e8:	00a60613          	addi	a2,a2,10 # 1000a <begin_signature+0xf00a>
+ 2ec:	78061073          	csrw	mtohost,a2
+ 2f0:	01059613          	slli	a2,a1,0x10
+ 2f4:	01065613          	srli	a2,a2,0x10
+ 2f8:	000201b7          	lui	gp,0x20
+ 2fc:	003661b3          	or	gp,a2,gp
+ 300:	78019073          	csrw	mtohost,gp
+ 304:	0105d613          	srli	a2,a1,0x10
+ 308:	000301b7          	lui	gp,0x30
+ 30c:	003661b3          	or	gp,a2,gp
+ 310:	78019073          	csrw	mtohost,gp
+ 314:	00010637          	lui	a2,0x10
+ 318:	00a60613          	addi	a2,a2,10 # 1000a <begin_signature+0xf00a>
+ 31c:	78061073          	csrw	mtohost,a2
+ 320:	780e1073          	csrw	mtohost,t3
+ 324:	0000006f          	j	324 <exit+0x6c>
+ 328:	0000                	.2byte	0x0
+ 32a:	0000                	.2byte	0x0
+ 32c:	0000                	.2byte	0x0
+ 32e:	0000                	.2byte	0x0
+ 330:	0000                	.2byte	0x0
+ 332:	0000                	.2byte	0x0
+ 334:	0000                	.2byte	0x0
+ 336:	0000                	.2byte	0x0
+ 338:	0000                	.2byte	0x0
+ 33a:	0000                	.2byte	0x0
+ 33c:	0000                	.2byte	0x0
+ 33e:	0000                	.2byte	0x0
+ 340:	0000                	.2byte	0x0
+ 342:	0000                	.2byte	0x0

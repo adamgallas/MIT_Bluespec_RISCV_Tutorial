@@ -1,0 +1,11 @@
+=== Generated schedule for module_brAddrCalc ===
+
+Method schedule
+---------------
+Method: brAddrCalc
+Ready signal: True
+Conflict-free: brAddrCalc
+ 
+Logical execution order: brAddrCalc
+
+=================================================

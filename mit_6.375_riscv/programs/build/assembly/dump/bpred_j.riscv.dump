@@ -1,0 +1,138 @@
+
+/home/adam/mit_6.375/lab5-harness/programs/assembly/../build/assembly/bin/bpred_j.riscv:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000200 <_start>:
+ 200:	06400413          	li	s0,100
+ 204:	00000e13          	li	t3,0
+
+00000208 <loopstart>:
+ 208:	0780006f          	j	280 <step1>
+ 20c:	00100e13          	li	t3,1
+
+00000210 <step15>:
+ 210:	0780006f          	j	288 <step16>
+ 214:	01000e13          	li	t3,16
+
+00000218 <step14>:
+ 218:	ff9ff06f          	j	210 <step15>
+ 21c:	00f00e13          	li	t3,15
+
+00000220 <step13>:
+ 220:	ff9ff06f          	j	218 <step14>
+ 224:	00e00e13          	li	t3,14
+
+00000228 <step12>:
+ 228:	ff9ff06f          	j	220 <step13>
+ 22c:	00d00e13          	li	t3,13
+
+00000230 <step11>:
+ 230:	ff9ff06f          	j	228 <step12>
+ 234:	00c00e13          	li	t3,12
+
+00000238 <step10>:
+ 238:	ff9ff06f          	j	230 <step11>
+ 23c:	00b00e13          	li	t3,11
+
+00000240 <step9>:
+ 240:	ff9ff06f          	j	238 <step10>
+ 244:	00a00e13          	li	t3,10
+
+00000248 <step8>:
+ 248:	ff9ff06f          	j	240 <step9>
+ 24c:	00900e13          	li	t3,9
+
+00000250 <step7>:
+ 250:	ff9ff06f          	j	248 <step8>
+ 254:	00800e13          	li	t3,8
+
+00000258 <step6>:
+ 258:	ff9ff06f          	j	250 <step7>
+ 25c:	00700e13          	li	t3,7
+
+00000260 <step5>:
+ 260:	ff9ff06f          	j	258 <step6>
+ 264:	00600e13          	li	t3,6
+
+00000268 <step4>:
+ 268:	ff9ff06f          	j	260 <step5>
+ 26c:	00500e13          	li	t3,5
+
+00000270 <step3>:
+ 270:	ff9ff06f          	j	268 <step4>
+ 274:	00400e13          	li	t3,4
+
+00000278 <step2>:
+ 278:	ff9ff06f          	j	270 <step3>
+ 27c:	00300e13          	li	t3,3
+
+00000280 <step1>:
+ 280:	ff9ff06f          	j	278 <step2>
+ 284:	00200e13          	li	t3,2
+
+00000288 <step16>:
+ 288:	fff40413          	addi	s0,s0,-1
+ 28c:	f6041ee3          	bnez	s0,208 <loopstart>
+ 290:	000e0a63          	beqz	t3,2a4 <pass>
+ 294:	00c0006f          	j	2a0 <fail>
+ 298:	01c01663          	bne	zero,t3,2a4 <pass>
+ 29c:	00100e13          	li	t3,1
+
+000002a0 <fail>:
+ 2a0:	00c0006f          	j	2ac <exit>
+
+000002a4 <pass>:
+ 2a4:	00000e13          	li	t3,0
+ 2a8:	0040006f          	j	2ac <exit>
+
+000002ac <exit>:
+ 2ac:	c0002573          	rdcycle	a0
+ 2b0:	c02025f3          	rdinstret	a1
+ 2b4:	01051613          	slli	a2,a0,0x10
+ 2b8:	01065613          	srli	a2,a2,0x10
+ 2bc:	000206b7          	lui	a3,0x20
+ 2c0:	00d666b3          	or	a3,a2,a3
+ 2c4:	78069073          	csrw	mtohost,a3
+ 2c8:	01055613          	srli	a2,a0,0x10
+ 2cc:	000306b7          	lui	a3,0x30
+ 2d0:	00d666b3          	or	a3,a2,a3
+ 2d4:	78069073          	csrw	mtohost,a3
+ 2d8:	00010637          	lui	a2,0x10
+ 2dc:	00a60613          	addi	a2,a2,10 # 1000a <begin_signature+0xf00a>
+ 2e0:	78061073          	csrw	mtohost,a2
+ 2e4:	01059613          	slli	a2,a1,0x10
+ 2e8:	01065613          	srli	a2,a2,0x10
+ 2ec:	000201b7          	lui	gp,0x20
+ 2f0:	003661b3          	or	gp,a2,gp
+ 2f4:	78019073          	csrw	mtohost,gp
+ 2f8:	0105d613          	srli	a2,a1,0x10
+ 2fc:	000301b7          	lui	gp,0x30
+ 300:	003661b3          	or	gp,a2,gp
+ 304:	78019073          	csrw	mtohost,gp
+ 308:	00010637          	lui	a2,0x10
+ 30c:	00a60613          	addi	a2,a2,10 # 1000a <begin_signature+0xf00a>
+ 310:	78061073          	csrw	mtohost,a2
+ 314:	780e1073          	csrw	mtohost,t3
+ 318:	0000006f          	j	318 <exit+0x6c>
+ 31c:	0000                	.2byte	0x0
+ 31e:	0000                	.2byte	0x0
+ 320:	0000                	.2byte	0x0
+ 322:	0000                	.2byte	0x0
+ 324:	0000                	.2byte	0x0
+ 326:	0000                	.2byte	0x0
+ 328:	0000                	.2byte	0x0
+ 32a:	0000                	.2byte	0x0
+ 32c:	0000                	.2byte	0x0
+ 32e:	0000                	.2byte	0x0
+ 330:	0000                	.2byte	0x0
+ 332:	0000                	.2byte	0x0
+ 334:	0000                	.2byte	0x0
+ 336:	0000                	.2byte	0x0
+ 338:	0000                	.2byte	0x0
+ 33a:	0000                	.2byte	0x0
+ 33c:	0000                	.2byte	0x0
+ 33e:	0000                	.2byte	0x0
+ 340:	0000                	.2byte	0x0
+ 342:	0000                	.2byte	0x0

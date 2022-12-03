@@ -1,0 +1,568 @@
+=== Generated schedule for mkMMUSynth ===
+
+Method schedule
+---------------
+Method: request_sglist
+Ready signal: translationTable_cbram_counter_0_positive_reg
+Conflict-free: request_region,
+	       request_idRequest,
+	       request_idReturn,
+	       request_setInterface,
+	       idResponsePipe_first,
+	       idResponsePipe_deq,
+	       idResponsePipe_notEmpty,
+	       configResponsePipe_first,
+	       configResponsePipe_deq,
+	       configResponsePipe_notEmpty,
+	       errorPipe_first,
+	       errorPipe_deq,
+	       errorPipe_notEmpty,
+	       addr_0_request_put,
+	       addr_0_response_get,
+	       addr_1_request_put,
+	       addr_1_response_get
+Conflicts: request_sglist
+ 
+Method: request_region
+Ready signal: regall_cbram_counter_1_positive_reg &&
+	      configResponseFifo.i_notFull
+Conflict-free: request_sglist,
+	       request_idRequest,
+	       request_idReturn,
+	       request_setInterface,
+	       idResponsePipe_first,
+	       idResponsePipe_deq,
+	       idResponsePipe_notEmpty,
+	       configResponsePipe_first,
+	       configResponsePipe_deq,
+	       errorPipe_first,
+	       errorPipe_deq,
+	       errorPipe_notEmpty,
+	       addr_0_request_put,
+	       addr_0_response_get,
+	       addr_1_request_put,
+	       addr_1_response_get
+Sequenced after: configResponsePipe_notEmpty
+Conflicts: request_region
+ 
+Method: request_idRequest
+Ready signal: sglId_gen_tagFifo.i_notEmpty && idResponseFifo.i_notFull
+Conflict-free: request_sglist,
+	       request_region,
+	       request_idReturn,
+	       request_setInterface,
+	       idResponsePipe_first,
+	       idResponsePipe_deq,
+	       configResponsePipe_first,
+	       configResponsePipe_deq,
+	       configResponsePipe_notEmpty,
+	       errorPipe_first,
+	       errorPipe_deq,
+	       errorPipe_notEmpty,
+	       addr_0_request_put,
+	       addr_0_response_get,
+	       addr_1_request_put,
+	       addr_1_response_get
+Sequenced after: idResponsePipe_notEmpty
+Conflicts: request_idRequest
+ 
+Method: request_idReturn
+Ready signal: idReturnFifo.i_notFull
+Conflict-free: request_sglist,
+	       request_region,
+	       request_idRequest,
+	       request_setInterface,
+	       idResponsePipe_first,
+	       idResponsePipe_deq,
+	       idResponsePipe_notEmpty,
+	       configResponsePipe_first,
+	       configResponsePipe_deq,
+	       configResponsePipe_notEmpty,
+	       errorPipe_first,
+	       errorPipe_deq,
+	       errorPipe_notEmpty,
+	       addr_0_request_put,
+	       addr_0_response_get,
+	       addr_1_request_put,
+	       addr_1_response_get
+Conflicts: request_idReturn
+ 
+Method: request_setInterface
+Ready signal: True
+Conflict-free: request_sglist,
+	       request_region,
+	       request_idRequest,
+	       request_idReturn,
+	       request_setInterface,
+	       idResponsePipe_first,
+	       idResponsePipe_deq,
+	       idResponsePipe_notEmpty,
+	       configResponsePipe_first,
+	       configResponsePipe_deq,
+	       configResponsePipe_notEmpty,
+	       errorPipe_first,
+	       errorPipe_deq,
+	       errorPipe_notEmpty,
+	       addr_0_request_put,
+	       addr_0_response_get,
+	       addr_1_request_put,
+	       addr_1_response_get
+ 
+Method: idResponsePipe_first
+Ready signal: idResponseFifo.i_notEmpty
+Conflict-free: request_sglist,
+	       request_region,
+	       request_idRequest,
+	       request_idReturn,
+	       request_setInterface,
+	       idResponsePipe_first,
+	       idResponsePipe_notEmpty,
+	       configResponsePipe_first,
+	       configResponsePipe_deq,
+	       configResponsePipe_notEmpty,
+	       errorPipe_first,
+	       errorPipe_deq,
+	       errorPipe_notEmpty,
+	       addr_0_request_put,
+	       addr_0_response_get,
+	       addr_1_request_put,
+	       addr_1_response_get
+Sequenced before: idResponsePipe_deq
+ 
+Method: idResponsePipe_deq
+Ready signal: idResponseFifo.i_notEmpty
+Conflict-free: request_sglist,
+	       request_region,
+	       request_idRequest,
+	       request_idReturn,
+	       request_setInterface,
+	       configResponsePipe_first,
+	       configResponsePipe_deq,
+	       configResponsePipe_notEmpty,
+	       errorPipe_first,
+	       errorPipe_deq,
+	       errorPipe_notEmpty,
+	       addr_0_request_put,
+	       addr_0_response_get,
+	       addr_1_request_put,
+	       addr_1_response_get
+Sequenced after: idResponsePipe_first, idResponsePipe_notEmpty
+Conflicts: idResponsePipe_deq
+ 
+Method: idResponsePipe_notEmpty
+Ready signal: True
+Conflict-free: request_sglist,
+	       request_region,
+	       request_idReturn,
+	       request_setInterface,
+	       idResponsePipe_first,
+	       idResponsePipe_notEmpty,
+	       configResponsePipe_first,
+	       configResponsePipe_deq,
+	       configResponsePipe_notEmpty,
+	       errorPipe_first,
+	       errorPipe_deq,
+	       errorPipe_notEmpty,
+	       addr_0_request_put,
+	       addr_0_response_get,
+	       addr_1_request_put,
+	       addr_1_response_get
+Sequenced before: request_idRequest, idResponsePipe_deq
+ 
+Method: configResponsePipe_first
+Ready signal: configResponseFifo.i_notEmpty
+Conflict-free: request_sglist,
+	       request_region,
+	       request_idRequest,
+	       request_idReturn,
+	       request_setInterface,
+	       idResponsePipe_first,
+	       idResponsePipe_deq,
+	       idResponsePipe_notEmpty,
+	       configResponsePipe_first,
+	       configResponsePipe_notEmpty,
+	       errorPipe_first,
+	       errorPipe_deq,
+	       errorPipe_notEmpty,
+	       addr_0_request_put,
+	       addr_0_response_get,
+	       addr_1_request_put,
+	       addr_1_response_get
+Sequenced before: configResponsePipe_deq
+ 
+Method: configResponsePipe_deq
+Ready signal: configResponseFifo.i_notEmpty
+Conflict-free: request_sglist,
+	       request_region,
+	       request_idRequest,
+	       request_idReturn,
+	       request_setInterface,
+	       idResponsePipe_first,
+	       idResponsePipe_deq,
+	       idResponsePipe_notEmpty,
+	       errorPipe_first,
+	       errorPipe_deq,
+	       errorPipe_notEmpty,
+	       addr_0_request_put,
+	       addr_0_response_get,
+	       addr_1_request_put,
+	       addr_1_response_get
+Sequenced after: configResponsePipe_first, configResponsePipe_notEmpty
+Conflicts: configResponsePipe_deq
+ 
+Method: configResponsePipe_notEmpty
+Ready signal: True
+Conflict-free: request_sglist,
+	       request_idRequest,
+	       request_idReturn,
+	       request_setInterface,
+	       idResponsePipe_first,
+	       idResponsePipe_deq,
+	       idResponsePipe_notEmpty,
+	       configResponsePipe_first,
+	       configResponsePipe_notEmpty,
+	       errorPipe_first,
+	       errorPipe_deq,
+	       errorPipe_notEmpty,
+	       addr_0_request_put,
+	       addr_0_response_get,
+	       addr_1_request_put,
+	       addr_1_response_get
+Sequenced before: request_region, configResponsePipe_deq
+ 
+Method: errorPipe_first
+Ready signal: dmaErrorFifo.i_notEmpty
+Conflict-free: request_sglist,
+	       request_region,
+	       request_idRequest,
+	       request_idReturn,
+	       request_setInterface,
+	       idResponsePipe_first,
+	       idResponsePipe_deq,
+	       idResponsePipe_notEmpty,
+	       configResponsePipe_first,
+	       configResponsePipe_deq,
+	       configResponsePipe_notEmpty,
+	       errorPipe_first,
+	       errorPipe_notEmpty,
+	       addr_0_request_put,
+	       addr_0_response_get,
+	       addr_1_request_put,
+	       addr_1_response_get
+Sequenced before: errorPipe_deq
+ 
+Method: errorPipe_deq
+Ready signal: dmaErrorFifo.i_notEmpty
+Conflict-free: request_sglist,
+	       request_region,
+	       request_idRequest,
+	       request_idReturn,
+	       request_setInterface,
+	       idResponsePipe_first,
+	       idResponsePipe_deq,
+	       idResponsePipe_notEmpty,
+	       configResponsePipe_first,
+	       configResponsePipe_deq,
+	       configResponsePipe_notEmpty,
+	       addr_0_request_put,
+	       addr_0_response_get,
+	       addr_1_request_put,
+	       addr_1_response_get
+Sequenced after: errorPipe_first, errorPipe_notEmpty
+Conflicts: errorPipe_deq
+ 
+Method: errorPipe_notEmpty
+Ready signal: True
+Conflict-free: request_sglist,
+	       request_region,
+	       request_idRequest,
+	       request_idReturn,
+	       request_setInterface,
+	       idResponsePipe_first,
+	       idResponsePipe_deq,
+	       idResponsePipe_notEmpty,
+	       configResponsePipe_first,
+	       configResponsePipe_deq,
+	       configResponsePipe_notEmpty,
+	       errorPipe_first,
+	       errorPipe_notEmpty,
+	       addr_0_request_put,
+	       addr_0_response_get,
+	       addr_1_request_put,
+	       addr_1_response_get
+Sequenced before: errorPipe_deq
+ 
+Method: addr_0_request_put
+Ready signal: incomingReqs_0.i_notFull
+Conflict-free: request_sglist,
+	       request_region,
+	       request_idRequest,
+	       request_idReturn,
+	       request_setInterface,
+	       idResponsePipe_first,
+	       idResponsePipe_deq,
+	       idResponsePipe_notEmpty,
+	       configResponsePipe_first,
+	       configResponsePipe_deq,
+	       configResponsePipe_notEmpty,
+	       errorPipe_first,
+	       errorPipe_deq,
+	       errorPipe_notEmpty,
+	       addr_0_response_get,
+	       addr_1_request_put,
+	       addr_1_response_get
+Conflicts: addr_0_request_put
+ 
+Method: addr_0_response_get
+Ready signal: pageResponseFifos_0.i_notEmpty
+Conflict-free: request_sglist,
+	       request_region,
+	       request_idRequest,
+	       request_idReturn,
+	       request_setInterface,
+	       idResponsePipe_first,
+	       idResponsePipe_deq,
+	       idResponsePipe_notEmpty,
+	       configResponsePipe_first,
+	       configResponsePipe_deq,
+	       configResponsePipe_notEmpty,
+	       errorPipe_first,
+	       errorPipe_deq,
+	       errorPipe_notEmpty,
+	       addr_0_request_put,
+	       addr_1_request_put,
+	       addr_1_response_get
+Conflicts: addr_0_response_get
+ 
+Method: addr_1_request_put
+Ready signal: incomingReqs_1.i_notFull
+Conflict-free: request_sglist,
+	       request_region,
+	       request_idRequest,
+	       request_idReturn,
+	       request_setInterface,
+	       idResponsePipe_first,
+	       idResponsePipe_deq,
+	       idResponsePipe_notEmpty,
+	       configResponsePipe_first,
+	       configResponsePipe_deq,
+	       configResponsePipe_notEmpty,
+	       errorPipe_first,
+	       errorPipe_deq,
+	       errorPipe_notEmpty,
+	       addr_0_request_put,
+	       addr_0_response_get,
+	       addr_1_response_get
+Conflicts: addr_1_request_put
+ 
+Method: addr_1_response_get
+Ready signal: pageResponseFifos_1.i_notEmpty
+Conflict-free: request_sglist,
+	       request_region,
+	       request_idRequest,
+	       request_idReturn,
+	       request_setInterface,
+	       idResponsePipe_first,
+	       idResponsePipe_deq,
+	       idResponsePipe_notEmpty,
+	       configResponsePipe_first,
+	       configResponsePipe_deq,
+	       configResponsePipe_notEmpty,
+	       errorPipe_first,
+	       errorPipe_deq,
+	       errorPipe_notEmpty,
+	       addr_0_request_put,
+	       addr_0_response_get,
+	       addr_1_request_put
+Conflicts: addr_1_response_get
+ 
+Rule schedule
+-------------
+Rule: sglId_gen_counter_react
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: sglId_gen_complete_rule1
+Predicate: (sglId_gen_tags.port1__read[sglId_gen_tail_ptr] ||
+	    sglId_gen_comp_fifo.i_notFull) &&
+	   sglId_gen_comp_state[0]
+Blocking rules: sglId_gen_ret_rule
+ 
+Rule: sglId_gen_ret_rule
+Predicate: sglId_gen_retFifo.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: sglId_gen_init_rule
+Predicate: ! sglId_gen_inited
+Blocking rules: (none)
+ 
+Rule: sglId_gen_tag_rule
+Predicate: sglId_gen_tagFifo.i_notFull &&
+	   sglId_gen_inited && sglId_gen_counter_positive_reg
+Blocking rules: (none)
+ 
+Rule: complete_sglId_gen
+Predicate: sglId_gen_comp_fifo.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: regall_cbram_counter_0_react
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: regall_cbram_counter_1_react
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: regall_cbram_bramRule
+Predicate: (! regall_cbram_data2_0[146]) ||
+	   (! regall_cbram_responseFifo_0.notFull) ||
+	   regall_cbram_responseFifo_0.i_notFull
+Blocking rules: (none)
+ 
+Rule: regall_cbram_bramRule_1
+Predicate: (! regall_cbram_data2_1[146]) ||
+	   (! regall_cbram_responseFifo_1.notFull) ||
+	   regall_cbram_responseFifo_1.i_notFull
+Blocking rules: (none)
+ 
+Rule: translationTable_cbram_counter_0_react
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: translationTable_cbram_counter_1_react
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: translationTable_cbram_bramRule
+Predicate: (! translationTable_cbram_data2_0[29]) ||
+	   (! translationTable_cbram_responseFifo_0.notFull) ||
+	   translationTable_cbram_responseFifo_0.i_notFull
+Blocking rules: (none)
+ 
+Rule: translationTable_cbram_bramRule_1
+Predicate: (! translationTable_cbram_data2_1[29]) ||
+	   (! translationTable_cbram_responseFifo_1.notFull) ||
+	   translationTable_cbram_responseFifo_1.i_notFull
+Blocking rules: (none)
+ 
+Rule: mkConnectionGetPut
+Predicate: dmaErrorFifos_0.i_notEmpty && dmaErrorFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: mkConnectionGetPut_1
+Predicate: dmaErrorFifo.i_notFull && dmaErrorFifos_1.i_notEmpty
+Blocking rules: mkConnectionGetPut
+ 
+Rule: stage1
+Predicate: incomingReqs_0.i_notEmpty &&
+	   regall_cbram_counter_0_positive_reg && reqs0_0.i_notFull
+Blocking rules: (none)
+ 
+Rule: stage2
+Predicate: reqs0_0.i_notEmpty &&
+	   regall_cbram_responseFifo_0.i_notEmpty &&
+	   (regall_cbram_responseFifo_0.first[144]
+	    ? stage3Params_0.i_notFull
+	    : dmaErrorFifos_0.i_notFull)
+Blocking rules: (none)
+ 
+Rule: stage3
+Predicate: stage3Params_0.i_notEmpty && stage4Params_0.i_notFull
+Blocking rules: (none)
+ 
+Rule: stage4
+Predicate: stage4Params_0.i_notEmpty &&
+	   translationTable_cbram_counter_0_positive_reg &&
+	   offs1_0.i_notFull &&
+	   ((! (stage4Params_0.first[47:45] == 3'd0)) ||
+	    dmaErrorFifos_1.i_notFull)
+Blocking rules: request_sglist
+ 
+Rule: stage5
+Predicate: translationTable_cbram_responseFifo_0.i_notEmpty &&
+	   offs1_0.i_notEmpty && pageResponseFifos_0.i_notFull
+Blocking rules: (none)
+ 
+Rule: stage1_1
+Predicate: incomingReqs_1.i_notEmpty &&
+	   regall_cbram_counter_1_positive_reg && reqs0_1.i_notFull
+Blocking rules: request_region
+ 
+Rule: stage2_1
+Predicate: reqs0_1.i_notEmpty &&
+	   regall_cbram_responseFifo_1.i_notEmpty &&
+	   (regall_cbram_responseFifo_1.first[144]
+	    ? stage3Params_1.i_notFull
+	    : dmaErrorFifos_0.i_notFull)
+Blocking rules: stage2
+ 
+Rule: stage3_1
+Predicate: stage3Params_1.i_notEmpty && stage4Params_1.i_notFull
+Blocking rules: (none)
+ 
+Rule: stage4_1
+Predicate: stage4Params_1.i_notEmpty &&
+	   translationTable_cbram_counter_1_positive_reg &&
+	   offs1_1.i_notFull &&
+	   ((! (stage4Params_1.first[47:45] == 3'd0)) ||
+	    dmaErrorFifos_1.i_notFull)
+Blocking rules: stage4
+ 
+Rule: stage5_1
+Predicate: translationTable_cbram_responseFifo_1.i_notEmpty &&
+	   offs1_1.i_notEmpty && pageResponseFifos_1.i_notFull
+Blocking rules: (none)
+ 
+Rule: idReturnRule
+Predicate: sglId_gen_inited &&
+	   regall_cbram_counter_1_positive_reg &&
+	   idReturnFifo.i_notEmpty && sglId_gen_retFifo.i_notFull
+Blocking rules: stage1_1, request_region
+ 
+Logical execution order: request_sglist,
+			 request_idReturn,
+			 request_setInterface,
+			 idResponsePipe_first,
+			 idResponsePipe_notEmpty,
+			 request_idRequest,
+			 idResponsePipe_deq,
+			 configResponsePipe_first,
+			 configResponsePipe_notEmpty,
+			 request_region,
+			 configResponsePipe_deq,
+			 errorPipe_first,
+			 errorPipe_notEmpty,
+			 errorPipe_deq,
+			 addr_0_request_put,
+			 addr_0_response_get,
+			 addr_1_request_put,
+			 addr_1_response_get,
+			 complete_sglId_gen,
+			 mkConnectionGetPut,
+			 mkConnectionGetPut_1,
+			 stage1,
+			 stage3,
+			 stage4,
+			 stage1_1,
+			 stage3_1,
+			 stage4_1,
+			 idReturnRule,
+			 sglId_gen_ret_rule,
+			 sglId_gen_complete_rule1,
+			 sglId_gen_init_rule,
+			 sglId_gen_tag_rule,
+			 sglId_gen_counter_react,
+			 regall_cbram_bramRule,
+			 stage2,
+			 regall_cbram_bramRule_1,
+			 stage2_1,
+			 regall_cbram_counter_0_react,
+			 regall_cbram_counter_1_react,
+			 translationTable_cbram_bramRule,
+			 stage5,
+			 translationTable_cbram_bramRule_1,
+			 stage5_1,
+			 translationTable_cbram_counter_0_react,
+			 translationTable_cbram_counter_1_react
+
+==========================================

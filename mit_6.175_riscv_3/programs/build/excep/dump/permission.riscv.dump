@@ -1,0 +1,696 @@
+
+/home/adam/Documents/lab8/programs/benchmarks/../build/excep/bin/permission.riscv:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000100 <user_trap_entry>:
+ 100:	1c40006f          	j	2c4 <trap_entry>
+ 104:	00000013          	nop
+ 108:	00000013          	nop
+ 10c:	00000013          	nop
+ 110:	00000013          	nop
+ 114:	00000013          	nop
+ 118:	00000013          	nop
+ 11c:	00000013          	nop
+ 120:	00000013          	nop
+ 124:	00000013          	nop
+ 128:	00000013          	nop
+ 12c:	00000013          	nop
+ 130:	00000013          	nop
+ 134:	00000013          	nop
+ 138:	00000013          	nop
+ 13c:	00000013          	nop
+
+00000140 <supervisor_trap_entry>:
+ 140:	0000006f          	j	140 <supervisor_trap_entry>
+ 144:	00000013          	nop
+ 148:	00000013          	nop
+ 14c:	00000013          	nop
+ 150:	00000013          	nop
+ 154:	00000013          	nop
+ 158:	00000013          	nop
+ 15c:	00000013          	nop
+ 160:	00000013          	nop
+ 164:	00000013          	nop
+ 168:	00000013          	nop
+ 16c:	00000013          	nop
+ 170:	00000013          	nop
+ 174:	00000013          	nop
+ 178:	00000013          	nop
+ 17c:	00000013          	nop
+
+00000180 <hypervisor_trap_entry>:
+ 180:	0000006f          	j	180 <hypervisor_trap_entry>
+ 184:	00000013          	nop
+ 188:	00000013          	nop
+ 18c:	00000013          	nop
+ 190:	00000013          	nop
+ 194:	00000013          	nop
+ 198:	00000013          	nop
+ 19c:	00000013          	nop
+ 1a0:	00000013          	nop
+ 1a4:	00000013          	nop
+ 1a8:	00000013          	nop
+ 1ac:	00000013          	nop
+ 1b0:	00000013          	nop
+ 1b4:	00000013          	nop
+ 1b8:	00000013          	nop
+ 1bc:	00000013          	nop
+
+000001c0 <machine_trap_entry>:
+ 1c0:	1040006f          	j	2c4 <trap_entry>
+ 1c4:	00000013          	nop
+ 1c8:	00000013          	nop
+ 1cc:	00000013          	nop
+ 1d0:	00000013          	nop
+ 1d4:	00000013          	nop
+ 1d8:	00000013          	nop
+ 1dc:	00000013          	nop
+ 1e0:	00000013          	nop
+ 1e4:	00000013          	nop
+ 1e8:	00000013          	nop
+ 1ec:	00000013          	nop
+ 1f0:	00000013          	nop
+ 1f4:	00000013          	nop
+ 1f8:	00000013          	nop
+ 1fc:	00000013          	nop
+
+00000200 <_start>:
+ 200:	00000093          	li	ra,0
+ 204:	00000113          	li	sp,0
+ 208:	00000193          	li	gp,0
+ 20c:	00000213          	li	tp,0
+ 210:	00000293          	li	t0,0
+ 214:	00000313          	li	t1,0
+ 218:	00000393          	li	t2,0
+ 21c:	00000413          	li	s0,0
+ 220:	00000493          	li	s1,0
+ 224:	00000513          	li	a0,0
+ 228:	00000593          	li	a1,0
+ 22c:	00000613          	li	a2,0
+ 230:	00000693          	li	a3,0
+ 234:	00000713          	li	a4,0
+ 238:	00000793          	li	a5,0
+ 23c:	00000813          	li	a6,0
+ 240:	00000893          	li	a7,0
+ 244:	00000913          	li	s2,0
+ 248:	00000993          	li	s3,0
+ 24c:	00000a13          	li	s4,0
+ 250:	00000a93          	li	s5,0
+ 254:	00000b13          	li	s6,0
+ 258:	00000b93          	li	s7,0
+ 25c:	00000c13          	li	s8,0
+ 260:	00000c93          	li	s9,0
+ 264:	00000d13          	li	s10,0
+ 268:	00000d93          	li	s11,0
+ 26c:	00000e13          	li	t3,0
+ 270:	00000e93          	li	t4,0
+ 274:	00000f13          	li	t5,0
+ 278:	00000f93          	li	t6,0
+ 27c:	00001197          	auipc	gp,0x1
+ 280:	0c418193          	addi	gp,gp,196 # 1340 <_gp_ptr>
+ 284:	00001217          	auipc	tp,0x1
+ 288:	8fb20213          	addi	tp,tp,-1797 # b7f <_end+0x3f>
+ 28c:	fc027213          	andi	tp,tp,-64
+ 290:	f1402573          	csrr	a0,mhartid
+ 294:	01151613          	slli	a2,a0,0x11
+ 298:	00c20233          	add	tp,tp,a2
+ 29c:	00150113          	addi	sp,a0,1
+ 2a0:	01111113          	slli	sp,sp,0x11
+ 2a4:	00410133          	add	sp,sp,tp
+ 2a8:	00001297          	auipc	t0,0x1
+ 2ac:	89828293          	addi	t0,t0,-1896 # b40 <_end>
+ 2b0:	34029073          	csrw	mscratch,t0
+ 2b4:	00000297          	auipc	t0,0x0
+ 2b8:	40028293          	addi	t0,t0,1024 # 6b4 <_init>
+ 2bc:	34129073          	csrw	mepc,t0
+ 2c0:	30200073          	mret
+
+000002c4 <trap_entry>:
+ 2c4:	34011173          	csrrw	sp,mscratch,sp
+ 2c8:	f8010113          	addi	sp,sp,-128
+ 2cc:	00112223          	sw	ra,4(sp)
+ 2d0:	00312623          	sw	gp,12(sp)
+ 2d4:	00412823          	sw	tp,16(sp)
+ 2d8:	00512a23          	sw	t0,20(sp)
+ 2dc:	00612c23          	sw	t1,24(sp)
+ 2e0:	00712e23          	sw	t2,28(sp)
+ 2e4:	02812023          	sw	s0,32(sp)
+ 2e8:	02912223          	sw	s1,36(sp)
+ 2ec:	02a12423          	sw	a0,40(sp)
+ 2f0:	02b12623          	sw	a1,44(sp)
+ 2f4:	02c12823          	sw	a2,48(sp)
+ 2f8:	02d12a23          	sw	a3,52(sp)
+ 2fc:	02e12c23          	sw	a4,56(sp)
+ 300:	02f12e23          	sw	a5,60(sp)
+ 304:	05012023          	sw	a6,64(sp)
+ 308:	05112223          	sw	a7,68(sp)
+ 30c:	05212423          	sw	s2,72(sp)
+ 310:	05312623          	sw	s3,76(sp)
+ 314:	05412823          	sw	s4,80(sp)
+ 318:	05512a23          	sw	s5,84(sp)
+ 31c:	05612c23          	sw	s6,88(sp)
+ 320:	05712e23          	sw	s7,92(sp)
+ 324:	07812023          	sw	s8,96(sp)
+ 328:	07912223          	sw	s9,100(sp)
+ 32c:	07a12423          	sw	s10,104(sp)
+ 330:	07b12623          	sw	s11,108(sp)
+ 334:	07c12823          	sw	t3,112(sp)
+ 338:	07d12a23          	sw	t4,116(sp)
+ 33c:	07e12c23          	sw	t5,120(sp)
+ 340:	07f12e23          	sw	t6,124(sp)
+ 344:	340022f3          	csrr	t0,mscratch
+ 348:	00512423          	sw	t0,8(sp)
+ 34c:	34202573          	csrr	a0,mcause
+ 350:	341025f3          	csrr	a1,mepc
+ 354:	00010613          	mv	a2,sp
+ 358:	1dc000ef          	jal	ra,534 <handle_trap>
+ 35c:	34151073          	csrw	mepc,a0
+ 360:	08010293          	addi	t0,sp,128
+ 364:	34029073          	csrw	mscratch,t0
+ 368:	00412083          	lw	ra,4(sp)
+ 36c:	00c12183          	lw	gp,12(sp)
+ 370:	01012203          	lw	tp,16(sp)
+ 374:	01412283          	lw	t0,20(sp)
+ 378:	01812303          	lw	t1,24(sp)
+ 37c:	01c12383          	lw	t2,28(sp)
+ 380:	02012403          	lw	s0,32(sp)
+ 384:	02412483          	lw	s1,36(sp)
+ 388:	02812503          	lw	a0,40(sp)
+ 38c:	02c12583          	lw	a1,44(sp)
+ 390:	03012603          	lw	a2,48(sp)
+ 394:	03412683          	lw	a3,52(sp)
+ 398:	03812703          	lw	a4,56(sp)
+ 39c:	03c12783          	lw	a5,60(sp)
+ 3a0:	04012803          	lw	a6,64(sp)
+ 3a4:	04412883          	lw	a7,68(sp)
+ 3a8:	04812903          	lw	s2,72(sp)
+ 3ac:	04c12983          	lw	s3,76(sp)
+ 3b0:	05012a03          	lw	s4,80(sp)
+ 3b4:	05412a83          	lw	s5,84(sp)
+ 3b8:	05812b03          	lw	s6,88(sp)
+ 3bc:	05c12b83          	lw	s7,92(sp)
+ 3c0:	06012c03          	lw	s8,96(sp)
+ 3c4:	06412c83          	lw	s9,100(sp)
+ 3c8:	06812d03          	lw	s10,104(sp)
+ 3cc:	06c12d83          	lw	s11,108(sp)
+ 3d0:	07012e03          	lw	t3,112(sp)
+ 3d4:	07412e83          	lw	t4,116(sp)
+ 3d8:	07812f03          	lw	t5,120(sp)
+ 3dc:	07c12f83          	lw	t6,124(sp)
+ 3e0:	00812103          	lw	sp,8(sp)
+ 3e4:	30200073          	mret
+ 3e8:	0000                	.2byte	0x0
+ 3ea:	0000                	.2byte	0x0
+ 3ec:	0000                	.2byte	0x0
+ 3ee:	0000                	.2byte	0x0
+ 3f0:	0000                	.2byte	0x0
+ 3f2:	0000                	.2byte	0x0
+ 3f4:	0000                	.2byte	0x0
+ 3f6:	0000                	.2byte	0x0
+ 3f8:	0000                	.2byte	0x0
+ 3fa:	0000                	.2byte	0x0
+ 3fc:	0000                	.2byte	0x0
+ 3fe:	0000                	.2byte	0x0
+ 400:	0000                	.2byte	0x0
+ 402:	0000                	.2byte	0x0
+
+00000404 <printInt_hdl>:
+ 404:	01051793          	slli	a5,a0,0x10
+ 408:	00020737          	lui	a4,0x20
+ 40c:	0107d793          	srli	a5,a5,0x10
+ 410:	00e7e7b3          	or	a5,a5,a4
+ 414:	78079073          	csrw	mtohost,a5
+ 418:	000307b7          	lui	a5,0x30
+ 41c:	01055513          	srli	a0,a0,0x10
+ 420:	00f56533          	or	a0,a0,a5
+ 424:	78051073          	csrw	mtohost,a0
+ 428:	00008067          	ret
+
+0000042c <printChar_hdl>:
+ 42c:	01051513          	slli	a0,a0,0x10
+ 430:	000107b7          	lui	a5,0x10
+ 434:	01055513          	srli	a0,a0,0x10
+ 438:	00f56533          	or	a0,a0,a5
+ 43c:	78051073          	csrw	mtohost,a0
+ 440:	00008067          	ret
+
+00000444 <printStr_hdl>:
+ 444:	ffc57793          	andi	a5,a0,-4
+ 448:	0007a683          	lw	a3,0(a5) # 10000 <_gp_ptr+0xecc0>
+ 44c:	00351713          	slli	a4,a0,0x3
+ 450:	01877713          	andi	a4,a4,24
+ 454:	0ff00793          	li	a5,255
+ 458:	00e797b3          	sll	a5,a5,a4
+ 45c:	00d7f7b3          	and	a5,a5,a3
+ 460:	00e7d7b3          	srl	a5,a5,a4
+ 464:	04078063          	beqz	a5,4a4 <printStr_hdl+0x60>
+ 468:	00010637          	lui	a2,0x10
+ 46c:	fff60813          	addi	a6,a2,-1 # ffff <_gp_ptr+0xecbf>
+ 470:	0ff00593          	li	a1,255
+ 474:	0107f7b3          	and	a5,a5,a6
+ 478:	00c7e7b3          	or	a5,a5,a2
+ 47c:	78079073          	csrw	mtohost,a5
+ 480:	00150513          	addi	a0,a0,1
+ 484:	ffc57793          	andi	a5,a0,-4
+ 488:	0007a683          	lw	a3,0(a5)
+ 48c:	00351713          	slli	a4,a0,0x3
+ 490:	01877713          	andi	a4,a4,24
+ 494:	00e597b3          	sll	a5,a1,a4
+ 498:	00d7f7b3          	and	a5,a5,a3
+ 49c:	00e7d7b3          	srl	a5,a5,a4
+ 4a0:	fc079ae3          	bnez	a5,474 <printStr_hdl+0x30>
+ 4a4:	00008067          	ret
+
+000004a8 <mul_hdl>:
+ 4a8:	00261613          	slli	a2,a2,0x2
+ 4ac:	00259593          	slli	a1,a1,0x2
+ 4b0:	00b685b3          	add	a1,a3,a1
+ 4b4:	00c687b3          	add	a5,a3,a2
+ 4b8:	0005a603          	lw	a2,0(a1)
+ 4bc:	0007a583          	lw	a1,0(a5)
+ 4c0:	02000713          	li	a4,32
+ 4c4:	00000813          	li	a6,0
+ 4c8:	00167793          	andi	a5,a2,1
+ 4cc:	fff70713          	addi	a4,a4,-1 # 1ffff <_gp_ptr+0x1ecbf>
+ 4d0:	00078463          	beqz	a5,4d8 <mul_hdl+0x30>
+ 4d4:	00b80833          	add	a6,a6,a1
+ 4d8:	00165613          	srli	a2,a2,0x1
+ 4dc:	00159593          	slli	a1,a1,0x1
+ 4e0:	fe0714e3          	bnez	a4,4c8 <mul_hdl+0x20>
+ 4e4:	00251793          	slli	a5,a0,0x2
+ 4e8:	00f686b3          	add	a3,a3,a5
+ 4ec:	0106a023          	sw	a6,0(a3)
+ 4f0:	00008067          	ret
+
+000004f4 <toHostExit_hdl>:
+ 4f4:	01051793          	slli	a5,a0,0x10
+ 4f8:	0107d793          	srli	a5,a5,0x10
+ 4fc:	78079073          	csrw	mtohost,a5
+ 500:	0000006f          	j	500 <toHostExit_hdl+0xc>
+
+00000504 <toHostExit>:
+ 504:	00000893          	li	a7,0
+ 508:	00000073          	ecall
+ 50c:	00008067          	ret
+
+00000510 <printInt>:
+ 510:	00100893          	li	a7,1
+ 514:	00000073          	ecall
+ 518:	00008067          	ret
+
+0000051c <printChar>:
+ 51c:	00200893          	li	a7,2
+ 520:	00000073          	ecall
+ 524:	00008067          	ret
+
+00000528 <printStr>:
+ 528:	00300893          	li	a7,3
+ 52c:	00000073          	ecall
+ 530:	00008067          	ret
+
+00000534 <handle_trap>:
+ 534:	00200793          	li	a5,2
+ 538:	04f50063          	beq	a0,a5,578 <handle_trap+0x44>
+ 53c:	00800713          	li	a4,8
+ 540:	00e50863          	beq	a0,a4,550 <handle_trap+0x1c>
+ 544:	00100793          	li	a5,1
+ 548:	78079073          	csrw	mtohost,a5
+ 54c:	0000006f          	j	54c <handle_trap+0x18>
+ 550:	04462683          	lw	a3,68(a2)
+ 554:	02862703          	lw	a4,40(a2)
+ 558:	04068463          	beqz	a3,5a0 <handle_trap+0x6c>
+ 55c:	0cf68e63          	beq	a3,a5,638 <handle_trap+0x104>
+ 560:	00100793          	li	a5,1
+ 564:	0af68663          	beq	a3,a5,610 <handle_trap+0xdc>
+ 568:	00300613          	li	a2,3
+ 56c:	0ec68263          	beq	a3,a2,650 <handle_trap+0x11c>
+ 570:	78079073          	csrw	mtohost,a5
+ 574:	0000006f          	j	574 <handle_trap+0x40>
+ 578:	0005a503          	lw	a0,0(a1)
+ 57c:	fe0077b7          	lui	a5,0xfe007
+ 580:	07f78793          	addi	a5,a5,127 # fe00707f <_gp_ptr+0xfe005d3f>
+ 584:	02000737          	lui	a4,0x2000
+ 588:	00f577b3          	and	a5,a0,a5
+ 58c:	03370713          	addi	a4,a4,51 # 2000033 <_gp_ptr+0x1ffecf3>
+ 590:	02e78063          	beq	a5,a4,5b0 <handle_trap+0x7c>
+ 594:	00100793          	li	a5,1
+ 598:	78079073          	csrw	mtohost,a5
+ 59c:	0000006f          	j	59c <handle_trap+0x68>
+ 5a0:	01071713          	slli	a4,a4,0x10
+ 5a4:	01075713          	srli	a4,a4,0x10
+ 5a8:	78071073          	csrw	mtohost,a4
+ 5ac:	0000006f          	j	5ac <handle_trap+0x78>
+ 5b0:	01255793          	srli	a5,a0,0x12
+ 5b4:	07c7f793          	andi	a5,a5,124
+ 5b8:	00d55713          	srli	a4,a0,0xd
+ 5bc:	00f607b3          	add	a5,a2,a5
+ 5c0:	07c77713          	andi	a4,a4,124
+ 5c4:	0007a803          	lw	a6,0(a5)
+ 5c8:	00e60733          	add	a4,a2,a4
+ 5cc:	00755513          	srli	a0,a0,0x7
+ 5d0:	00072683          	lw	a3,0(a4)
+ 5d4:	01f57513          	andi	a0,a0,31
+ 5d8:	02000713          	li	a4,32
+ 5dc:	00000893          	li	a7,0
+ 5e0:	0016f793          	andi	a5,a3,1
+ 5e4:	fff70713          	addi	a4,a4,-1
+ 5e8:	00078463          	beqz	a5,5f0 <handle_trap+0xbc>
+ 5ec:	010888b3          	add	a7,a7,a6
+ 5f0:	0016d693          	srli	a3,a3,0x1
+ 5f4:	00181813          	slli	a6,a6,0x1
+ 5f8:	fe0714e3          	bnez	a4,5e0 <handle_trap+0xac>
+ 5fc:	00251793          	slli	a5,a0,0x2
+ 600:	00f60633          	add	a2,a2,a5
+ 604:	01162023          	sw	a7,0(a2)
+ 608:	00458513          	addi	a0,a1,4
+ 60c:	00008067          	ret
+ 610:	01071793          	slli	a5,a4,0x10
+ 614:	000206b7          	lui	a3,0x20
+ 618:	0107d793          	srli	a5,a5,0x10
+ 61c:	00d7e7b3          	or	a5,a5,a3
+ 620:	78079073          	csrw	mtohost,a5
+ 624:	01075793          	srli	a5,a4,0x10
+ 628:	00030737          	lui	a4,0x30
+ 62c:	00e7e7b3          	or	a5,a5,a4
+ 630:	78079073          	csrw	mtohost,a5
+ 634:	fd5ff06f          	j	608 <handle_trap+0xd4>
+ 638:	01071793          	slli	a5,a4,0x10
+ 63c:	0107d793          	srli	a5,a5,0x10
+ 640:	00010737          	lui	a4,0x10
+ 644:	00e7e7b3          	or	a5,a5,a4
+ 648:	78079073          	csrw	mtohost,a5
+ 64c:	fbdff06f          	j	608 <handle_trap+0xd4>
+ 650:	ffc77793          	andi	a5,a4,-4
+ 654:	0007a603          	lw	a2,0(a5)
+ 658:	00371693          	slli	a3,a4,0x3
+ 65c:	0186f693          	andi	a3,a3,24
+ 660:	0ff00793          	li	a5,255
+ 664:	00d797b3          	sll	a5,a5,a3
+ 668:	00c7f7b3          	and	a5,a5,a2
+ 66c:	00d7d7b3          	srl	a5,a5,a3
+ 670:	f8078ce3          	beqz	a5,608 <handle_trap+0xd4>
+ 674:	00010637          	lui	a2,0x10
+ 678:	fff60813          	addi	a6,a2,-1 # ffff <_gp_ptr+0xecbf>
+ 67c:	0ff00513          	li	a0,255
+ 680:	0107f7b3          	and	a5,a5,a6
+ 684:	00c7e7b3          	or	a5,a5,a2
+ 688:	78079073          	csrw	mtohost,a5
+ 68c:	00170713          	addi	a4,a4,1 # 10001 <_gp_ptr+0xecc1>
+ 690:	ffc77793          	andi	a5,a4,-4
+ 694:	0007a883          	lw	a7,0(a5)
+ 698:	00371693          	slli	a3,a4,0x3
+ 69c:	0186f693          	andi	a3,a3,24
+ 6a0:	00d517b3          	sll	a5,a0,a3
+ 6a4:	0117f7b3          	and	a5,a5,a7
+ 6a8:	00d7d7b3          	srl	a5,a5,a3
+ 6ac:	fc079ae3          	bnez	a5,680 <handle_trap+0x14c>
+ 6b0:	f59ff06f          	j	608 <handle_trap+0xd4>
+
+000006b4 <_init>:
+ 6b4:	ff010113          	addi	sp,sp,-16
+ 6b8:	00000593          	li	a1,0
+ 6bc:	00000513          	li	a0,0
+ 6c0:	00112623          	sw	ra,12(sp)
+ 6c4:	018000ef          	jal	ra,6dc <main>
+ 6c8:	00000893          	li	a7,0
+ 6cc:	00000073          	ecall
+ 6d0:	00c12083          	lw	ra,12(sp)
+ 6d4:	01010113          	addi	sp,sp,16
+ 6d8:	00008067          	ret
+
+Disassembly of section .text.startup:
+
+000006dc <main>:
+ 6dc:	ff010113          	addi	sp,sp,-16
+ 6e0:	70800513          	li	a0,1800
+ 6e4:	00112623          	sw	ra,12(sp)
+ 6e8:	e41ff0ef          	jal	ra,528 <printStr>
+ 6ec:	78001073          	csrw	mtohost,zero
+ 6f0:	0000006f          	j	6f0 <main+0x14>
+ 6f4:	00300893          	li	a7,3
+ 6f8:	72000513          	li	a0,1824
+ 6fc:	00000073          	ecall
+ 700:	fff00513          	li	a0,-1
+ 704:	00008067          	ret
+
+Disassembly of section .data:
+
+00000740 <_tbss_end+0x740>:
+ 740:	deadbeef          	.word	0xdeadbeef
+ 744:	deadbeef          	.word	0xdeadbeef
+ 748:	deadbeef          	.word	0xdeadbeef
+ 74c:	deadbeef          	.word	0xdeadbeef
+ 750:	deadbeef          	.word	0xdeadbeef
+ 754:	deadbeef          	.word	0xdeadbeef
+ 758:	deadbeef          	.word	0xdeadbeef
+ 75c:	deadbeef          	.word	0xdeadbeef
+ 760:	deadbeef          	.word	0xdeadbeef
+ 764:	deadbeef          	.word	0xdeadbeef
+ 768:	deadbeef          	.word	0xdeadbeef
+ 76c:	deadbeef          	.word	0xdeadbeef
+ 770:	deadbeef          	.word	0xdeadbeef
+ 774:	deadbeef          	.word	0xdeadbeef
+ 778:	deadbeef          	.word	0xdeadbeef
+ 77c:	deadbeef          	.word	0xdeadbeef
+ 780:	deadbeef          	.word	0xdeadbeef
+ 784:	deadbeef          	.word	0xdeadbeef
+ 788:	deadbeef          	.word	0xdeadbeef
+ 78c:	deadbeef          	.word	0xdeadbeef
+ 790:	deadbeef          	.word	0xdeadbeef
+ 794:	deadbeef          	.word	0xdeadbeef
+ 798:	deadbeef          	.word	0xdeadbeef
+ 79c:	deadbeef          	.word	0xdeadbeef
+ 7a0:	deadbeef          	.word	0xdeadbeef
+ 7a4:	deadbeef          	.word	0xdeadbeef
+ 7a8:	deadbeef          	.word	0xdeadbeef
+ 7ac:	deadbeef          	.word	0xdeadbeef
+ 7b0:	deadbeef          	.word	0xdeadbeef
+ 7b4:	deadbeef          	.word	0xdeadbeef
+ 7b8:	deadbeef          	.word	0xdeadbeef
+ 7bc:	deadbeef          	.word	0xdeadbeef
+ 7c0:	deadbeef          	.word	0xdeadbeef
+ 7c4:	deadbeef          	.word	0xdeadbeef
+ 7c8:	deadbeef          	.word	0xdeadbeef
+ 7cc:	deadbeef          	.word	0xdeadbeef
+ 7d0:	deadbeef          	.word	0xdeadbeef
+ 7d4:	deadbeef          	.word	0xdeadbeef
+ 7d8:	deadbeef          	.word	0xdeadbeef
+ 7dc:	deadbeef          	.word	0xdeadbeef
+ 7e0:	deadbeef          	.word	0xdeadbeef
+ 7e4:	deadbeef          	.word	0xdeadbeef
+ 7e8:	deadbeef          	.word	0xdeadbeef
+ 7ec:	deadbeef          	.word	0xdeadbeef
+ 7f0:	deadbeef          	.word	0xdeadbeef
+ 7f4:	deadbeef          	.word	0xdeadbeef
+ 7f8:	deadbeef          	.word	0xdeadbeef
+ 7fc:	deadbeef          	.word	0xdeadbeef
+ 800:	deadbeef          	.word	0xdeadbeef
+ 804:	deadbeef          	.word	0xdeadbeef
+ 808:	deadbeef          	.word	0xdeadbeef
+ 80c:	deadbeef          	.word	0xdeadbeef
+ 810:	deadbeef          	.word	0xdeadbeef
+ 814:	deadbeef          	.word	0xdeadbeef
+ 818:	deadbeef          	.word	0xdeadbeef
+ 81c:	deadbeef          	.word	0xdeadbeef
+ 820:	deadbeef          	.word	0xdeadbeef
+ 824:	deadbeef          	.word	0xdeadbeef
+ 828:	deadbeef          	.word	0xdeadbeef
+ 82c:	deadbeef          	.word	0xdeadbeef
+ 830:	deadbeef          	.word	0xdeadbeef
+ 834:	deadbeef          	.word	0xdeadbeef
+ 838:	deadbeef          	.word	0xdeadbeef
+ 83c:	deadbeef          	.word	0xdeadbeef
+ 840:	deadbeef          	.word	0xdeadbeef
+ 844:	deadbeef          	.word	0xdeadbeef
+ 848:	deadbeef          	.word	0xdeadbeef
+ 84c:	deadbeef          	.word	0xdeadbeef
+ 850:	deadbeef          	.word	0xdeadbeef
+ 854:	deadbeef          	.word	0xdeadbeef
+ 858:	deadbeef          	.word	0xdeadbeef
+ 85c:	deadbeef          	.word	0xdeadbeef
+ 860:	deadbeef          	.word	0xdeadbeef
+ 864:	deadbeef          	.word	0xdeadbeef
+ 868:	deadbeef          	.word	0xdeadbeef
+ 86c:	deadbeef          	.word	0xdeadbeef
+ 870:	deadbeef          	.word	0xdeadbeef
+ 874:	deadbeef          	.word	0xdeadbeef
+ 878:	deadbeef          	.word	0xdeadbeef
+ 87c:	deadbeef          	.word	0xdeadbeef
+ 880:	deadbeef          	.word	0xdeadbeef
+ 884:	deadbeef          	.word	0xdeadbeef
+ 888:	deadbeef          	.word	0xdeadbeef
+ 88c:	deadbeef          	.word	0xdeadbeef
+ 890:	deadbeef          	.word	0xdeadbeef
+ 894:	deadbeef          	.word	0xdeadbeef
+ 898:	deadbeef          	.word	0xdeadbeef
+ 89c:	deadbeef          	.word	0xdeadbeef
+ 8a0:	deadbeef          	.word	0xdeadbeef
+ 8a4:	deadbeef          	.word	0xdeadbeef
+ 8a8:	deadbeef          	.word	0xdeadbeef
+ 8ac:	deadbeef          	.word	0xdeadbeef
+ 8b0:	deadbeef          	.word	0xdeadbeef
+ 8b4:	deadbeef          	.word	0xdeadbeef
+ 8b8:	deadbeef          	.word	0xdeadbeef
+ 8bc:	deadbeef          	.word	0xdeadbeef
+ 8c0:	deadbeef          	.word	0xdeadbeef
+ 8c4:	deadbeef          	.word	0xdeadbeef
+ 8c8:	deadbeef          	.word	0xdeadbeef
+ 8cc:	deadbeef          	.word	0xdeadbeef
+ 8d0:	deadbeef          	.word	0xdeadbeef
+ 8d4:	deadbeef          	.word	0xdeadbeef
+ 8d8:	deadbeef          	.word	0xdeadbeef
+ 8dc:	deadbeef          	.word	0xdeadbeef
+ 8e0:	deadbeef          	.word	0xdeadbeef
+ 8e4:	deadbeef          	.word	0xdeadbeef
+ 8e8:	deadbeef          	.word	0xdeadbeef
+ 8ec:	deadbeef          	.word	0xdeadbeef
+ 8f0:	deadbeef          	.word	0xdeadbeef
+ 8f4:	deadbeef          	.word	0xdeadbeef
+ 8f8:	deadbeef          	.word	0xdeadbeef
+ 8fc:	deadbeef          	.word	0xdeadbeef
+ 900:	deadbeef          	.word	0xdeadbeef
+ 904:	deadbeef          	.word	0xdeadbeef
+ 908:	deadbeef          	.word	0xdeadbeef
+ 90c:	deadbeef          	.word	0xdeadbeef
+ 910:	deadbeef          	.word	0xdeadbeef
+ 914:	deadbeef          	.word	0xdeadbeef
+ 918:	deadbeef          	.word	0xdeadbeef
+ 91c:	deadbeef          	.word	0xdeadbeef
+ 920:	deadbeef          	.word	0xdeadbeef
+ 924:	deadbeef          	.word	0xdeadbeef
+ 928:	deadbeef          	.word	0xdeadbeef
+ 92c:	deadbeef          	.word	0xdeadbeef
+ 930:	deadbeef          	.word	0xdeadbeef
+ 934:	deadbeef          	.word	0xdeadbeef
+ 938:	deadbeef          	.word	0xdeadbeef
+ 93c:	deadbeef          	.word	0xdeadbeef
+ 940:	deadbeef          	.word	0xdeadbeef
+ 944:	deadbeef          	.word	0xdeadbeef
+ 948:	deadbeef          	.word	0xdeadbeef
+ 94c:	deadbeef          	.word	0xdeadbeef
+ 950:	deadbeef          	.word	0xdeadbeef
+ 954:	deadbeef          	.word	0xdeadbeef
+ 958:	deadbeef          	.word	0xdeadbeef
+ 95c:	deadbeef          	.word	0xdeadbeef
+ 960:	deadbeef          	.word	0xdeadbeef
+ 964:	deadbeef          	.word	0xdeadbeef
+ 968:	deadbeef          	.word	0xdeadbeef
+ 96c:	deadbeef          	.word	0xdeadbeef
+ 970:	deadbeef          	.word	0xdeadbeef
+ 974:	deadbeef          	.word	0xdeadbeef
+ 978:	deadbeef          	.word	0xdeadbeef
+ 97c:	deadbeef          	.word	0xdeadbeef
+ 980:	deadbeef          	.word	0xdeadbeef
+ 984:	deadbeef          	.word	0xdeadbeef
+ 988:	deadbeef          	.word	0xdeadbeef
+ 98c:	deadbeef          	.word	0xdeadbeef
+ 990:	deadbeef          	.word	0xdeadbeef
+ 994:	deadbeef          	.word	0xdeadbeef
+ 998:	deadbeef          	.word	0xdeadbeef
+ 99c:	deadbeef          	.word	0xdeadbeef
+ 9a0:	deadbeef          	.word	0xdeadbeef
+ 9a4:	deadbeef          	.word	0xdeadbeef
+ 9a8:	deadbeef          	.word	0xdeadbeef
+ 9ac:	deadbeef          	.word	0xdeadbeef
+ 9b0:	deadbeef          	.word	0xdeadbeef
+ 9b4:	deadbeef          	.word	0xdeadbeef
+ 9b8:	deadbeef          	.word	0xdeadbeef
+ 9bc:	deadbeef          	.word	0xdeadbeef
+ 9c0:	deadbeef          	.word	0xdeadbeef
+ 9c4:	deadbeef          	.word	0xdeadbeef
+ 9c8:	deadbeef          	.word	0xdeadbeef
+ 9cc:	deadbeef          	.word	0xdeadbeef
+ 9d0:	deadbeef          	.word	0xdeadbeef
+ 9d4:	deadbeef          	.word	0xdeadbeef
+ 9d8:	deadbeef          	.word	0xdeadbeef
+ 9dc:	deadbeef          	.word	0xdeadbeef
+ 9e0:	deadbeef          	.word	0xdeadbeef
+ 9e4:	deadbeef          	.word	0xdeadbeef
+ 9e8:	deadbeef          	.word	0xdeadbeef
+ 9ec:	deadbeef          	.word	0xdeadbeef
+ 9f0:	deadbeef          	.word	0xdeadbeef
+ 9f4:	deadbeef          	.word	0xdeadbeef
+ 9f8:	deadbeef          	.word	0xdeadbeef
+ 9fc:	deadbeef          	.word	0xdeadbeef
+ a00:	deadbeef          	.word	0xdeadbeef
+ a04:	deadbeef          	.word	0xdeadbeef
+ a08:	deadbeef          	.word	0xdeadbeef
+ a0c:	deadbeef          	.word	0xdeadbeef
+ a10:	deadbeef          	.word	0xdeadbeef
+ a14:	deadbeef          	.word	0xdeadbeef
+ a18:	deadbeef          	.word	0xdeadbeef
+ a1c:	deadbeef          	.word	0xdeadbeef
+ a20:	deadbeef          	.word	0xdeadbeef
+ a24:	deadbeef          	.word	0xdeadbeef
+ a28:	deadbeef          	.word	0xdeadbeef
+ a2c:	deadbeef          	.word	0xdeadbeef
+ a30:	deadbeef          	.word	0xdeadbeef
+ a34:	deadbeef          	.word	0xdeadbeef
+ a38:	deadbeef          	.word	0xdeadbeef
+ a3c:	deadbeef          	.word	0xdeadbeef
+ a40:	deadbeef          	.word	0xdeadbeef
+ a44:	deadbeef          	.word	0xdeadbeef
+ a48:	deadbeef          	.word	0xdeadbeef
+ a4c:	deadbeef          	.word	0xdeadbeef
+ a50:	deadbeef          	.word	0xdeadbeef
+ a54:	deadbeef          	.word	0xdeadbeef
+ a58:	deadbeef          	.word	0xdeadbeef
+ a5c:	deadbeef          	.word	0xdeadbeef
+ a60:	deadbeef          	.word	0xdeadbeef
+ a64:	deadbeef          	.word	0xdeadbeef
+ a68:	deadbeef          	.word	0xdeadbeef
+ a6c:	deadbeef          	.word	0xdeadbeef
+ a70:	deadbeef          	.word	0xdeadbeef
+ a74:	deadbeef          	.word	0xdeadbeef
+ a78:	deadbeef          	.word	0xdeadbeef
+ a7c:	deadbeef          	.word	0xdeadbeef
+ a80:	deadbeef          	.word	0xdeadbeef
+ a84:	deadbeef          	.word	0xdeadbeef
+ a88:	deadbeef          	.word	0xdeadbeef
+ a8c:	deadbeef          	.word	0xdeadbeef
+ a90:	deadbeef          	.word	0xdeadbeef
+ a94:	deadbeef          	.word	0xdeadbeef
+ a98:	deadbeef          	.word	0xdeadbeef
+ a9c:	deadbeef          	.word	0xdeadbeef
+ aa0:	deadbeef          	.word	0xdeadbeef
+ aa4:	deadbeef          	.word	0xdeadbeef
+ aa8:	deadbeef          	.word	0xdeadbeef
+ aac:	deadbeef          	.word	0xdeadbeef
+ ab0:	deadbeef          	.word	0xdeadbeef
+ ab4:	deadbeef          	.word	0xdeadbeef
+ ab8:	deadbeef          	.word	0xdeadbeef
+ abc:	deadbeef          	.word	0xdeadbeef
+ ac0:	deadbeef          	.word	0xdeadbeef
+ ac4:	deadbeef          	.word	0xdeadbeef
+ ac8:	deadbeef          	.word	0xdeadbeef
+ acc:	deadbeef          	.word	0xdeadbeef
+ ad0:	deadbeef          	.word	0xdeadbeef
+ ad4:	deadbeef          	.word	0xdeadbeef
+ ad8:	deadbeef          	.word	0xdeadbeef
+ adc:	deadbeef          	.word	0xdeadbeef
+ ae0:	deadbeef          	.word	0xdeadbeef
+ ae4:	deadbeef          	.word	0xdeadbeef
+ ae8:	deadbeef          	.word	0xdeadbeef
+ aec:	deadbeef          	.word	0xdeadbeef
+ af0:	deadbeef          	.word	0xdeadbeef
+ af4:	deadbeef          	.word	0xdeadbeef
+ af8:	deadbeef          	.word	0xdeadbeef
+ afc:	deadbeef          	.word	0xdeadbeef
+ b00:	deadbeef          	.word	0xdeadbeef
+ b04:	deadbeef          	.word	0xdeadbeef
+ b08:	deadbeef          	.word	0xdeadbeef
+ b0c:	deadbeef          	.word	0xdeadbeef
+ b10:	deadbeef          	.word	0xdeadbeef
+ b14:	deadbeef          	.word	0xdeadbeef
+ b18:	deadbeef          	.word	0xdeadbeef
+ b1c:	deadbeef          	.word	0xdeadbeef
+ b20:	deadbeef          	.word	0xdeadbeef
+ b24:	deadbeef          	.word	0xdeadbeef
+ b28:	deadbeef          	.word	0xdeadbeef
+ b2c:	deadbeef          	.word	0xdeadbeef
+ b30:	deadbeef          	.word	0xdeadbeef
+ b34:	deadbeef          	.word	0xdeadbeef
+ b38:	deadbeef          	.word	0xdeadbeef
+ b3c:	deadbeef          	.word	0xdeadbeef

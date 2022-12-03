@@ -1,0 +1,102 @@
+=== Generated schedule for mkMemServerIndicationInverter ===
+
+Method schedule
+---------------
+Method: ifc_addrResponse
+Ready signal: fifo_addrResponse.i_notFull
+Conflict-free: ifc_reportStateDbg,
+	       ifc_reportMemoryTraffic,
+	       ifc_error,
+	       inverseIfc_addrResponse,
+	       inverseIfc_reportStateDbg,
+	       inverseIfc_reportMemoryTraffic,
+	       inverseIfc_error
+Conflicts: ifc_addrResponse
+ 
+Method: ifc_reportStateDbg
+Ready signal: fifo_reportStateDbg.i_notFull
+Conflict-free: ifc_addrResponse,
+	       ifc_reportMemoryTraffic,
+	       ifc_error,
+	       inverseIfc_addrResponse,
+	       inverseIfc_reportStateDbg,
+	       inverseIfc_reportMemoryTraffic,
+	       inverseIfc_error
+Conflicts: ifc_reportStateDbg
+ 
+Method: ifc_reportMemoryTraffic
+Ready signal: fifo_reportMemoryTraffic.i_notFull
+Conflict-free: ifc_addrResponse,
+	       ifc_reportStateDbg,
+	       ifc_error,
+	       inverseIfc_addrResponse,
+	       inverseIfc_reportStateDbg,
+	       inverseIfc_reportMemoryTraffic,
+	       inverseIfc_error
+Conflicts: ifc_reportMemoryTraffic
+ 
+Method: ifc_error
+Ready signal: fifo_error.i_notFull
+Conflict-free: ifc_addrResponse,
+	       ifc_reportStateDbg,
+	       ifc_reportMemoryTraffic,
+	       inverseIfc_addrResponse,
+	       inverseIfc_reportStateDbg,
+	       inverseIfc_reportMemoryTraffic,
+	       inverseIfc_error
+Conflicts: ifc_error
+ 
+Method: inverseIfc_addrResponse
+Ready signal: fifo_addrResponse.i_notEmpty
+Conflict-free: ifc_addrResponse,
+	       ifc_reportStateDbg,
+	       ifc_reportMemoryTraffic,
+	       ifc_error,
+	       inverseIfc_reportStateDbg,
+	       inverseIfc_reportMemoryTraffic,
+	       inverseIfc_error
+Conflicts: inverseIfc_addrResponse
+ 
+Method: inverseIfc_reportStateDbg
+Ready signal: fifo_reportStateDbg.i_notEmpty
+Conflict-free: ifc_addrResponse,
+	       ifc_reportStateDbg,
+	       ifc_reportMemoryTraffic,
+	       ifc_error,
+	       inverseIfc_addrResponse,
+	       inverseIfc_reportMemoryTraffic,
+	       inverseIfc_error
+Conflicts: inverseIfc_reportStateDbg
+ 
+Method: inverseIfc_reportMemoryTraffic
+Ready signal: fifo_reportMemoryTraffic.i_notEmpty
+Conflict-free: ifc_addrResponse,
+	       ifc_reportStateDbg,
+	       ifc_reportMemoryTraffic,
+	       ifc_error,
+	       inverseIfc_addrResponse,
+	       inverseIfc_reportStateDbg,
+	       inverseIfc_error
+Conflicts: inverseIfc_reportMemoryTraffic
+ 
+Method: inverseIfc_error
+Ready signal: fifo_error.i_notEmpty
+Conflict-free: ifc_addrResponse,
+	       ifc_reportStateDbg,
+	       ifc_reportMemoryTraffic,
+	       ifc_error,
+	       inverseIfc_addrResponse,
+	       inverseIfc_reportStateDbg,
+	       inverseIfc_reportMemoryTraffic
+Conflicts: inverseIfc_error
+ 
+Logical execution order: ifc_addrResponse,
+			 ifc_reportStateDbg,
+			 ifc_reportMemoryTraffic,
+			 ifc_error,
+			 inverseIfc_addrResponse,
+			 inverseIfc_reportStateDbg,
+			 inverseIfc_reportMemoryTraffic,
+			 inverseIfc_error
+
+=============================================================

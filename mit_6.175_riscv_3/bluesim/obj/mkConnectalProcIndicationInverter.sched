@@ -1,0 +1,30 @@
+=== Generated schedule for mkConnectalProcIndicationInverter ===
+
+Method schedule
+---------------
+Method: ifc_sendMessage
+Ready signal: fifo_sendMessage.i_notFull
+Conflict-free: ifc_wroteWord, inverseIfc_sendMessage, inverseIfc_wroteWord
+Conflicts: ifc_sendMessage
+ 
+Method: ifc_wroteWord
+Ready signal: fifo_wroteWord.i_notFull
+Conflict-free: ifc_sendMessage, inverseIfc_sendMessage, inverseIfc_wroteWord
+Conflicts: ifc_wroteWord
+ 
+Method: inverseIfc_sendMessage
+Ready signal: fifo_sendMessage.i_notEmpty
+Conflict-free: ifc_sendMessage, ifc_wroteWord, inverseIfc_wroteWord
+Conflicts: inverseIfc_sendMessage
+ 
+Method: inverseIfc_wroteWord
+Ready signal: fifo_wroteWord.i_notEmpty
+Conflict-free: ifc_sendMessage, ifc_wroteWord, inverseIfc_sendMessage
+Conflicts: inverseIfc_wroteWord
+ 
+Logical execution order: ifc_sendMessage,
+			 ifc_wroteWord,
+			 inverseIfc_sendMessage,
+			 inverseIfc_wroteWord
+
+=================================================================

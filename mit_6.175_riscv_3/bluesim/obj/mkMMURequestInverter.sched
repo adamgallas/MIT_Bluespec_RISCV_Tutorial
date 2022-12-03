@@ -1,0 +1,146 @@
+=== Generated schedule for mkMMURequestInverter ===
+
+Method schedule
+---------------
+Method: ifc_sglist
+Ready signal: fifo_sglist.i_notFull
+Conflict-free: ifc_region,
+	       ifc_idRequest,
+	       ifc_idReturn,
+	       ifc_setInterface,
+	       inverseIfc_sglist,
+	       inverseIfc_region,
+	       inverseIfc_idRequest,
+	       inverseIfc_idReturn,
+	       inverseIfc_setInterface
+Conflicts: ifc_sglist
+ 
+Method: ifc_region
+Ready signal: fifo_region.i_notFull
+Conflict-free: ifc_sglist,
+	       ifc_idRequest,
+	       ifc_idReturn,
+	       ifc_setInterface,
+	       inverseIfc_sglist,
+	       inverseIfc_region,
+	       inverseIfc_idRequest,
+	       inverseIfc_idReturn,
+	       inverseIfc_setInterface
+Conflicts: ifc_region
+ 
+Method: ifc_idRequest
+Ready signal: fifo_idRequest.i_notFull
+Conflict-free: ifc_sglist,
+	       ifc_region,
+	       ifc_idReturn,
+	       ifc_setInterface,
+	       inverseIfc_sglist,
+	       inverseIfc_region,
+	       inverseIfc_idRequest,
+	       inverseIfc_idReturn,
+	       inverseIfc_setInterface
+Conflicts: ifc_idRequest
+ 
+Method: ifc_idReturn
+Ready signal: fifo_idReturn.i_notFull
+Conflict-free: ifc_sglist,
+	       ifc_region,
+	       ifc_idRequest,
+	       ifc_setInterface,
+	       inverseIfc_sglist,
+	       inverseIfc_region,
+	       inverseIfc_idRequest,
+	       inverseIfc_idReturn,
+	       inverseIfc_setInterface
+Conflicts: ifc_idReturn
+ 
+Method: ifc_setInterface
+Ready signal: fifo_setInterface.i_notFull
+Conflict-free: ifc_sglist,
+	       ifc_region,
+	       ifc_idRequest,
+	       ifc_idReturn,
+	       inverseIfc_sglist,
+	       inverseIfc_region,
+	       inverseIfc_idRequest,
+	       inverseIfc_idReturn,
+	       inverseIfc_setInterface
+Conflicts: ifc_setInterface
+ 
+Method: inverseIfc_sglist
+Ready signal: fifo_sglist.i_notEmpty
+Conflict-free: ifc_sglist,
+	       ifc_region,
+	       ifc_idRequest,
+	       ifc_idReturn,
+	       ifc_setInterface,
+	       inverseIfc_region,
+	       inverseIfc_idRequest,
+	       inverseIfc_idReturn,
+	       inverseIfc_setInterface
+Conflicts: inverseIfc_sglist
+ 
+Method: inverseIfc_region
+Ready signal: fifo_region.i_notEmpty
+Conflict-free: ifc_sglist,
+	       ifc_region,
+	       ifc_idRequest,
+	       ifc_idReturn,
+	       ifc_setInterface,
+	       inverseIfc_sglist,
+	       inverseIfc_idRequest,
+	       inverseIfc_idReturn,
+	       inverseIfc_setInterface
+Conflicts: inverseIfc_region
+ 
+Method: inverseIfc_idRequest
+Ready signal: fifo_idRequest.i_notEmpty
+Conflict-free: ifc_sglist,
+	       ifc_region,
+	       ifc_idRequest,
+	       ifc_idReturn,
+	       ifc_setInterface,
+	       inverseIfc_sglist,
+	       inverseIfc_region,
+	       inverseIfc_idReturn,
+	       inverseIfc_setInterface
+Conflicts: inverseIfc_idRequest
+ 
+Method: inverseIfc_idReturn
+Ready signal: fifo_idReturn.i_notEmpty
+Conflict-free: ifc_sglist,
+	       ifc_region,
+	       ifc_idRequest,
+	       ifc_idReturn,
+	       ifc_setInterface,
+	       inverseIfc_sglist,
+	       inverseIfc_region,
+	       inverseIfc_idRequest,
+	       inverseIfc_setInterface
+Conflicts: inverseIfc_idReturn
+ 
+Method: inverseIfc_setInterface
+Ready signal: fifo_setInterface.i_notEmpty
+Conflict-free: ifc_sglist,
+	       ifc_region,
+	       ifc_idRequest,
+	       ifc_idReturn,
+	       ifc_setInterface,
+	       inverseIfc_sglist,
+	       inverseIfc_region,
+	       inverseIfc_idRequest,
+	       inverseIfc_idReturn
+Conflicts: inverseIfc_setInterface
+ 
+Logical execution order: ifc_sglist,
+			 ifc_region,
+			 ifc_idRequest,
+			 ifc_idReturn,
+			 ifc_setInterface,
+			 inverseIfc_sglist,
+			 inverseIfc_region,
+			 inverseIfc_idRequest,
+			 inverseIfc_idReturn,
+			 inverseIfc_setInterface
+
+====================================================

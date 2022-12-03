@@ -1,0 +1,11 @@
+=== Generated schedule for module_alu ===
+
+Method schedule
+---------------
+Method: alu
+Ready signal: True
+Conflict-free: alu
+ 
+Logical execution order: alu
+
+==========================================

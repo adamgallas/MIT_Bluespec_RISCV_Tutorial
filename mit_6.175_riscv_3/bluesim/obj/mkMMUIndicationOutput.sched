@@ -1,0 +1,288 @@
+=== Generated schedule for mkMMUIndicationOutput ===
+
+Method schedule
+---------------
+Method: portalIfc_messageSize_size
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       ifc_idResponse,
+	       ifc_configResp,
+	       ifc_error
+ 
+Method: portalIfc_indications_0_first
+Ready signal: indicationPipes.RDY_portalIfc_indications_0_first
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       ifc_idResponse,
+	       ifc_configResp,
+	       ifc_error
+Sequenced before: portalIfc_indications_0_deq
+ 
+Method: portalIfc_indications_0_deq
+Ready signal: indicationPipes.RDY_portalIfc_indications_0_deq
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       ifc_idResponse,
+	       ifc_configResp,
+	       ifc_error
+Sequenced after: portalIfc_indications_0_first,
+		 portalIfc_indications_0_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: portalIfc_indications_0_deq
+ 
+Method: portalIfc_indications_0_notEmpty
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       ifc_configResp,
+	       ifc_error
+Sequenced before: portalIfc_indications_0_deq, ifc_idResponse
+ 
+Method: portalIfc_indications_1_first
+Ready signal: indicationPipes.RDY_portalIfc_indications_1_first
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       ifc_idResponse,
+	       ifc_configResp,
+	       ifc_error
+Sequenced before: portalIfc_indications_1_deq
+ 
+Method: portalIfc_indications_1_deq
+Ready signal: indicationPipes.RDY_portalIfc_indications_1_deq
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       ifc_idResponse,
+	       ifc_configResp,
+	       ifc_error
+Sequenced after: portalIfc_indications_1_first,
+		 portalIfc_indications_1_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: portalIfc_indications_1_deq
+ 
+Method: portalIfc_indications_1_notEmpty
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       ifc_idResponse,
+	       ifc_error
+Sequenced before: portalIfc_indications_1_deq, ifc_configResp
+ 
+Method: portalIfc_indications_2_first
+Ready signal: indicationPipes.RDY_portalIfc_indications_2_first
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       ifc_idResponse,
+	       ifc_configResp,
+	       ifc_error
+Sequenced before: portalIfc_indications_2_deq
+ 
+Method: portalIfc_indications_2_deq
+Ready signal: indicationPipes.RDY_portalIfc_indications_2_deq
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       ifc_idResponse,
+	       ifc_configResp,
+	       ifc_error
+Sequenced after: portalIfc_indications_2_first,
+		 portalIfc_indications_2_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: portalIfc_indications_2_deq
+ 
+Method: portalIfc_indications_2_notEmpty
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       ifc_idResponse,
+	       ifc_configResp
+Sequenced before: portalIfc_indications_2_deq, ifc_error
+ 
+Method: portalIfc_intr_status
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: portalIfc_indications_0_deq,
+		  portalIfc_indications_1_deq,
+		  portalIfc_indications_2_deq,
+		  ifc_idResponse,
+		  ifc_configResp,
+		  ifc_error
+ 
+Method: portalIfc_intr_channel
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: portalIfc_indications_0_deq,
+		  portalIfc_indications_1_deq,
+		  portalIfc_indications_2_deq,
+		  ifc_idResponse,
+		  ifc_configResp,
+		  ifc_error
+ 
+Method: ifc_idResponse
+Ready signal: indicationPipes.RDY_methods_idResponse_enq
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       ifc_configResp,
+	       ifc_error
+Sequenced after: portalIfc_indications_0_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: ifc_idResponse
+ 
+Method: ifc_configResp
+Ready signal: indicationPipes.RDY_methods_configResp_enq
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       portalIfc_indications_2_notEmpty,
+	       ifc_idResponse,
+	       ifc_error
+Sequenced after: portalIfc_indications_1_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: ifc_configResp
+ 
+Method: ifc_error
+Ready signal: indicationPipes.RDY_methods_error_enq
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_indications_1_first,
+	       portalIfc_indications_1_deq,
+	       portalIfc_indications_1_notEmpty,
+	       portalIfc_indications_2_first,
+	       portalIfc_indications_2_deq,
+	       ifc_idResponse,
+	       ifc_configResp
+Sequenced after: portalIfc_indications_2_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: ifc_error
+ 
+Logical execution order: portalIfc_messageSize_size,
+			 portalIfc_indications_0_first,
+			 portalIfc_indications_0_notEmpty,
+			 portalIfc_indications_1_first,
+			 portalIfc_indications_1_notEmpty,
+			 portalIfc_indications_2_first,
+			 portalIfc_indications_2_notEmpty,
+			 portalIfc_intr_status,
+			 portalIfc_intr_channel,
+			 portalIfc_indications_0_deq,
+			 portalIfc_indications_1_deq,
+			 portalIfc_indications_2_deq,
+			 ifc_idResponse,
+			 ifc_configResp,
+			 ifc_error
+
+=====================================================

@@ -1,0 +1,66 @@
+=== Generated schedule for mkMMUIndicationInverter ===
+
+Method schedule
+---------------
+Method: ifc_idResponse
+Ready signal: fifo_idResponse.i_notFull
+Conflict-free: ifc_configResp,
+	       ifc_error,
+	       inverseIfc_idResponse,
+	       inverseIfc_configResp,
+	       inverseIfc_error
+Conflicts: ifc_idResponse
+ 
+Method: ifc_configResp
+Ready signal: fifo_configResp.i_notFull
+Conflict-free: ifc_idResponse,
+	       ifc_error,
+	       inverseIfc_idResponse,
+	       inverseIfc_configResp,
+	       inverseIfc_error
+Conflicts: ifc_configResp
+ 
+Method: ifc_error
+Ready signal: fifo_error.i_notFull
+Conflict-free: ifc_idResponse,
+	       ifc_configResp,
+	       inverseIfc_idResponse,
+	       inverseIfc_configResp,
+	       inverseIfc_error
+Conflicts: ifc_error
+ 
+Method: inverseIfc_idResponse
+Ready signal: fifo_idResponse.i_notEmpty
+Conflict-free: ifc_idResponse,
+	       ifc_configResp,
+	       ifc_error,
+	       inverseIfc_configResp,
+	       inverseIfc_error
+Conflicts: inverseIfc_idResponse
+ 
+Method: inverseIfc_configResp
+Ready signal: fifo_configResp.i_notEmpty
+Conflict-free: ifc_idResponse,
+	       ifc_configResp,
+	       ifc_error,
+	       inverseIfc_idResponse,
+	       inverseIfc_error
+Conflicts: inverseIfc_configResp
+ 
+Method: inverseIfc_error
+Ready signal: fifo_error.i_notEmpty
+Conflict-free: ifc_idResponse,
+	       ifc_configResp,
+	       ifc_error,
+	       inverseIfc_idResponse,
+	       inverseIfc_configResp
+Conflicts: inverseIfc_error
+ 
+Logical execution order: ifc_idResponse,
+			 ifc_configResp,
+			 ifc_error,
+			 inverseIfc_idResponse,
+			 inverseIfc_configResp,
+			 inverseIfc_error
+
+=======================================================

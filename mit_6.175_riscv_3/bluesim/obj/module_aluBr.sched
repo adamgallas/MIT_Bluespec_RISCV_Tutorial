@@ -1,0 +1,11 @@
+=== Generated schedule for module_aluBr ===
+
+Method schedule
+---------------
+Method: aluBr
+Ready signal: True
+Conflict-free: aluBr
+ 
+Logical execution order: aluBr
+
+============================================

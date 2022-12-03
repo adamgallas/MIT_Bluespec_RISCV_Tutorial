@@ -1,0 +1,38 @@
+=== Generated schedule for mkEHR2BSV ===
+
+Method schedule
+---------------
+Method: r1__write
+Ready signal: True
+Conflict-free: r1__read
+Sequenced before (restricted): r2__write, r2__read
+Conflicts: r1__write
+ 
+Method: r1__read
+Ready signal: True
+Conflict-free: r1__write, r1__read, r2__write, r2__read
+ 
+Method: r2__write
+Ready signal: True
+Conflict-free: r1__read, r2__read
+Sequenced after (restricted): r1__write
+Conflicts: r2__write
+ 
+Method: r2__read
+Ready signal: True
+Conflict-free: r1__read, r2__write, r2__read
+Sequenced after (restricted): r1__write
+ 
+Rule schedule
+-------------
+Rule: ehr_do_stuff
+Predicate: True
+Blocking rules: (none)
+ 
+Logical execution order: r1__write,
+			 r1__read,
+			 r2__write,
+			 r2__read,
+			 ehr_do_stuff
+
+=========================================

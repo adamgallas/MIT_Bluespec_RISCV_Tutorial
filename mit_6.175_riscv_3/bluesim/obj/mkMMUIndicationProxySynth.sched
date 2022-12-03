@@ -1,0 +1,212 @@
+=== Generated schedule for mkMMUIndicationProxySynth ===
+
+Method schedule
+---------------
+Method: portalIfc_slave_read_server_readReq_put
+Ready signal: memslave_req_ars.i_notFull &&
+	      memslave_rs.i_notFull && memslave_rsCtrl.i_notFull
+Conflict-free: portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write,
+	       ifc_idResponse,
+	       ifc_configResp,
+	       ifc_error
+Conflicts: portalIfc_slave_read_server_readReq_put
+ 
+Method: portalIfc_slave_read_server_readData_get
+Ready signal: memslave_rvFifo.i_notEmpty
+Conflict-free: portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write,
+	       ifc_idResponse,
+	       ifc_configResp,
+	       ifc_error
+Conflicts: portalIfc_slave_read_server_readData_get
+ 
+Method: portalIfc_slave_write_server_writeReq_put
+Ready signal: memslave_req_aws.i_notFull &&
+	      memslave_ws.i_notFull && memslave_wsCtrl.i_notFull
+Conflict-free: portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write,
+	       ifc_idResponse,
+	       ifc_configResp,
+	       ifc_error
+Conflicts: portalIfc_slave_write_server_writeReq_put
+ 
+Method: portalIfc_slave_write_server_writeData_put
+Ready signal: memslave_wsCtrl.i_notEmpty &&
+	      memslave_fifoWriteAddrGenerator_addrBeatFifo.i_notEmpty &&
+	      ((! memslave_fifoWriteAddrGenerator_addrBeatFifo.first[0]) ||
+	       memslave_fifoWriteDoneFifo.i_notFull)
+Conflict-free: portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_num_portals__write,
+	       ifc_idResponse,
+	       ifc_configResp,
+	       ifc_error
+Sequenced after (restricted): portalIfc_interrupt__read
+Conflicts: portalIfc_slave_write_server_writeData_put
+ 
+Method: portalIfc_slave_write_server_writeDone_get
+Ready signal: memslave_doneFifo.i_notEmpty
+Conflict-free: portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write,
+	       ifc_idResponse,
+	       ifc_configResp,
+	       ifc_error
+Conflicts: portalIfc_slave_write_server_writeDone_get
+ 
+Method: portalIfc_interrupt__read
+Ready signal: True
+Conflict-free: portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read
+Sequenced before (restricted): portalIfc_slave_write_server_writeData_put,
+			       portalIfc_num_portals__write,
+			       ifc_idResponse,
+			       ifc_configResp,
+			       ifc_error
+ 
+Method: portalIfc_num_portals__write
+Ready signal: True
+Conflict-free: portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       ifc_idResponse,
+	       ifc_configResp,
+	       ifc_error
+Sequenced before (restricted): portalIfc_num_portals__write
+Sequenced after (restricted): portalIfc_interrupt__read
+ 
+Method: ifc_idResponse
+Ready signal: dut.RDY_ifc_idResponse
+Conflict-free: portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_num_portals__write,
+	       ifc_configResp,
+	       ifc_error
+Sequenced after (restricted): portalIfc_interrupt__read
+Conflicts: ifc_idResponse
+ 
+Method: ifc_configResp
+Ready signal: dut.RDY_ifc_configResp
+Conflict-free: portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_num_portals__write,
+	       ifc_idResponse,
+	       ifc_error
+Sequenced after (restricted): portalIfc_interrupt__read
+Conflicts: ifc_configResp
+ 
+Method: ifc_error
+Ready signal: dut.RDY_ifc_error
+Conflict-free: portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_num_portals__write,
+	       ifc_idResponse,
+	       ifc_configResp
+Sequenced after (restricted): portalIfc_interrupt__read
+Conflicts: ifc_error
+ 
+Rule schedule
+-------------
+Rule: ctrlPort_count
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memslave_fifoReadAddrGenerator_addrBeatRule
+Predicate: memslave_fifoReadAddrGenerator_requestFifo.i_notEmpty &&
+	   memslave_fifoReadAddrGenerator_addrBeatFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_fifoWriteAddrGenerator_addrBeatRule
+Predicate: memslave_fifoWriteAddrGenerator_requestFifo.i_notEmpty &&
+	   memslave_fifoWriteAddrGenerator_addrBeatFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_write_done
+Predicate: memslave_fifoWriteDoneFifo.i_notEmpty &&
+	   memslave_ws.i_notEmpty &&
+	   memslave_wsCtrl.i_notEmpty && memslave_doneFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_req_aw
+Predicate: memslave_req_aws.i_notEmpty &&
+	   memslave_fifoWriteAddrGenerator_requestFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_req_ar
+Predicate: memslave_req_ars.i_notEmpty &&
+	   memslave_fifoReadAddrGenerator_requestFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_rvrule
+Predicate: memslave_fifoReadAddrGenerator_addrBeatFifo.i_notEmpty &&
+	   memslave_rsCtrl.i_notEmpty &&
+	   memslave_rs.i_notEmpty &&
+	   memslave_rvFifo.i_notFull &&
+	   (memslave_rsCtrl.first ||
+	    (((! (memslave_fifoReadAddrGenerator_addrBeatFifo.first[21:17] ==
+		  5'd0)) ||
+	      case memslave_rs.first of
+	      2'd0 -> dut.RDY_portalIfc_indications_0_deq
+	      2'd1 -> dut.RDY_portalIfc_indications_1_deq
+	      2'd2 -> dut.RDY_portalIfc_indications_2_deq
+	      _ -> 1'd1) &&
+	     ((! (memslave_fifoReadAddrGenerator_addrBeatFifo.first[21:17] ==
+		  5'd0)) ||
+	      case memslave_rs.first of
+	      2'd0 -> dut.RDY_portalIfc_indications_0_first
+	      2'd1 -> dut.RDY_portalIfc_indications_1_first
+	      2'd2 -> dut.RDY_portalIfc_indications_2_first
+	      _ -> 1'd1)))
+Blocking rules: (none)
+ 
+Logical execution order: portalIfc_slave_read_server_readReq_put,
+			 portalIfc_slave_read_server_readData_get,
+			 portalIfc_slave_write_server_writeReq_put,
+			 portalIfc_slave_write_server_writeDone_get,
+			 portalIfc_interrupt__read,
+			 memslave_req_aw,
+			 memslave_req_ar,
+			 memslave_rvrule,
+			 portalIfc_slave_write_server_writeData_put,
+			 portalIfc_num_portals__write,
+			 ifc_idResponse,
+			 ifc_configResp,
+			 ifc_error,
+			 ctrlPort_count,
+			 memslave_write_done,
+			 memslave_fifoReadAddrGenerator_addrBeatRule,
+			 memslave_fifoWriteAddrGenerator_addrBeatRule
+
+=========================================================
