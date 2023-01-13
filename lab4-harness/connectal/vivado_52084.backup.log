@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Tue Nov 15 23:20:03 2022
+# Process ID: 49205
+# Log file: /home/adam/mit_6.375/lab4-harness/connectal/vivado.log
+# Journal file: /home/adam/mit_6.375/lab4-harness/connectal/vivado.jou
+#-----------------------------------------------------------
+start_gui
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 15 23:26:02 2022...

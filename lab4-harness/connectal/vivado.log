@@ -1,0 +1,82 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Thu Nov 17 05:02:45 2022
+# Process ID: 22610
+# Log file: /home/adam/mit_6.375/lab4-harness/connectal/vivado.log
+# Journal file: /home/adam/mit_6.375/lab4-harness/connectal/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_checkpoint vc707g2/bin/top-post-route.dcp
+Command: open_checkpoint vc707g2/bin/top-post-route.dcp
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.2/data/ip'.
+INFO: [Netlist 29-17] Analyzing 4858 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2015.2
+INFO: [Device 21-403] Loading part xc7vx485tffg1761-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+CRITICAL WARNING: [Shape Builder 18-140] Failed to build a LUTNM shape for instances tile_0/lMyDut_ap/data1_reg[43]_i_44 and tile_0/lMyDut_ap/data1_reg[47]_i_81.  for bel A5LUT Element SLICE_X2Y0.A6LUT is not routable as there are 6 input pins and A6 cannot be used because of A5LUT usage..
+CRITICAL WARNING: [Shape Builder 18-140] Failed to build a LUTNM shape for instances tile_0/lMyDut_ap/data1_reg[47]_i_92__1 and tile_0/lMyDut_ap/data1_reg[47]_i_97__2.  for bel A5LUT Element SLICE_X2Y0.A6LUT is not routable as there are 6 input pins and A6 cannot be used because of A5LUT usage..
+Parsing XDC File [/home/adam/mit_6.375/lab4-harness/connectal/.Xil/Vivado-22610-ubuntu/dcp/mkPcieTop_early.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/adam/connectal/out/vc707g2/pcie2_7x_0/source/pcie2_7x_0-PCIE_X1Y0.xdc:121]
+INFO: [Timing 38-2] Deriving generated clocks [/home/adam/connectal/out/vc707g2/pcie2_7x_0/source/pcie2_7x_0-PCIE_X1Y0.xdc:121]
+create_generated_clock: Time (s): cpu = 00:00:25 ; elapsed = 00:00:20 . Memory (MB): peak = 7033.293 ; gain = 669.727 ; free physical = 10151 ; free virtual = 14476
+Finished Parsing XDC File [/home/adam/mit_6.375/lab4-harness/connectal/.Xil/Vivado-22610-ubuntu/dcp/mkPcieTop_early.xdc]
+Parsing XDC File [/home/adam/mit_6.375/lab4-harness/connectal/.Xil/Vivado-22610-ubuntu/dcp/mkPcieTop.xdc]
+WARNING: [Vivado 12-627] No clocks matched 'clkgen_pll_CLKOUT0'. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+CRITICAL WARNING: [Vivado 12-1387] No valid object(s) found for set_max_delay constraint with option '-from [get_clocks clkgen_pll_CLKOUT0]'. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'clkgen_pll_CLKOUT0'. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:16]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:16]
+CRITICAL WARNING: [Vivado 12-1387] No valid object(s) found for set_max_delay constraint with option '-to [get_clocks clkgen_pll_CLKOUT0]'. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:16]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'clkgen_pll_CLKOUT2'. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:21]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:21]
+CRITICAL WARNING: [Vivado 12-1387] No valid object(s) found for set_max_delay constraint with option '-from [get_clocks clkgen_pll_CLKOUT2]'. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:21]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'clkgen_pll_CLKOUT2'. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:22]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:22]
+CRITICAL WARNING: [Vivado 12-1387] No valid object(s) found for set_max_delay constraint with option '-to [get_clocks clkgen_pll_CLKOUT2]'. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:22]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Constraints 18-619] A clock with name 'pci_refclk' already exists, overwriting the previous clock with the same name. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:2]
+WARNING: [Vivado 12-627] No clocks matched 'clkgen_pll_CLKOUT0'. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+CRITICAL WARNING: [Vivado 12-1387] No valid object(s) found for set_max_delay constraint with option '-from [get_clocks clkgen_pll_CLKOUT0]'. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'clkgen_pll_CLKOUT0'. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:16]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:16]
+CRITICAL WARNING: [Vivado 12-1387] No valid object(s) found for set_max_delay constraint with option '-to [get_clocks clkgen_pll_CLKOUT0]'. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:16]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'clkgen_pll_CLKOUT2'. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:21]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:21]
+CRITICAL WARNING: [Vivado 12-1387] No valid object(s) found for set_max_delay constraint with option '-from [get_clocks clkgen_pll_CLKOUT2]'. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:21]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'clkgen_pll_CLKOUT2'. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:22]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:22]
+CRITICAL WARNING: [Vivado 12-1387] No valid object(s) found for set_max_delay constraint with option '-to [get_clocks clkgen_pll_CLKOUT2]'. [/home/adam/connectal/constraints/xilinx/pcie-clocks.xdc:22]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+Finished Parsing XDC File [/home/adam/mit_6.375/lab4-harness/connectal/.Xil/Vivado-22610-ubuntu/dcp/mkPcieTop.xdc]
+Parsing XDC File [/home/adam/mit_6.375/lab4-harness/connectal/.Xil/Vivado-22610-ubuntu/dcp/mkPcieTop_late.xdc]
+Finished Parsing XDC File [/home/adam/mit_6.375/lab4-harness/connectal/.Xil/Vivado-22610-ubuntu/dcp/mkPcieTop_late.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 7149.262 ; gain = 91.492 ; free physical = 10031 ; free virtual = 14357
+Restored from archive | CPU: 6.330000 secs | Memory: 94.011375 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 7149.262 ; gain = 91.492 ; free physical = 10031 ; free virtual = 14357
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 245 instances were transformed.
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 245 instances
+
+INFO: [Project 1-484] Checkpoint was created with build 1266856
+open_checkpoint: Time (s): cpu = 00:01:29 ; elapsed = 00:00:57 . Memory (MB): peak = 7339.281 ; gain = 1579.004 ; free physical = 9909 ; free virtual = 14128
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -name timing_1
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+report_timing_summary: Time (s): cpu = 00:00:47 ; elapsed = 00:00:15 . Memory (MB): peak = 7554.102 ; gain = 164.539 ; free physical = 9595 ; free virtual = 13823
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 17 05:05:09 2022...
