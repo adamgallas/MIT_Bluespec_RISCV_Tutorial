@@ -1,6 +1,6 @@
 # MIT_Bluespec_RISCV_Tutorial
 
-## 这是MIT-6.175课程和MIT-6.375课程的lab的代码
+### 这是MIT-6.175课程和MIT-6.375课程的lab的代码
 
 - 6.175的Lab分成三部分，Lab1-4为Bluespec基础，Lab5-8为Riscv的内容，还有最后的project
 - 6.375的Lab分为两部分，Lab1-4为基础，剩下的是Riscv
